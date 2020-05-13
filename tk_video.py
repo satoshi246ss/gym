@@ -577,7 +577,8 @@ class GUI:
             bmp2avi_lib.make_small_image(self.cvv.fn)
             self.rename_imgdata()
             # Meteor以外は、move file
-            if not self.flg1.get() == '0' :
+            print(self.cvv.flg1_list, self.cvv.flg1_list.count('0'))
+            if self.cvv.flg1_list.count(0) == 0 :
                 self.move_del_files(self.obs_files)
 
             value = self.EditBox.get()
