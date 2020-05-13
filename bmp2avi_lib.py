@@ -391,28 +391,31 @@ def fish_dir_org(main_dir):
 #    print( flog )
 
 
-# もし　small imageの名前をansに合わせて変更、ans=-1, 0 , 1, 2 
-def rename_small_image( fnfull, ans=-1, id=0, target_dir='C:/Users/root/Documents/Python Scripts/gym/tmp' ): #path_dir, detect_frame, xc, yc):
-    st = "_{:02d}".format(id)
-    #fn='J:/MT/20200311/20200311_025809_540_00.avi'
-    #path_dir =  os.path.dirname( fnfull )
-    basefn   =  os.path.basename( fnfull ).replace('_00.avi', st)
-    if   ans == -1 :
-        filename_img  = target_dir+"/"+basefn+'s.png'
-    elif ans == 0 :
-        filename_img = target_dir+"/"+basefn+'s0.png'
-    elif ans == 1 :
-        filename_img = target_dir+"/"+basefn+'s1.png'
-    elif ans == 2 :
-        filename_img = target_dir+"/"+basefn+'s2.png'
-    #print(filename_img0)
-
-    fn0 = get_fn_small_image(fnfull, 0, target_dir)
-    if fn0 == '' :
-        return
-    if fn0 == filename_img :
-        return
-    os.rename( fn0, filename_img)
+# もし　small imageの名前をans listに合わせて変更、ans=-1, 0 , 1, 2 
+def rename_small_image( fnfull, flg_list=[-1], target_dir='C:/Users/root/Documents/Python Scripts/gym/tmp' ): #path_dir, detect_frame, xc, yc):
+    for id in  range(len(flg_list)):
+        st = "_{:02d}".format(id)
+        #fn='J:/MT/20200311/20200311_025809_540_00.avi'
+        #path_dir =  os.path.dirname( fnfull )
+        basefn   =  os.path.basename( fnfull ).replace('_00.avi', st)
+        if  flg_list[id] == -1 :
+            filename_img  = target_dir+"/"+basefn+'s.png'
+        elif flg_list[id] == 0 :
+            filename_img = target_dir+"/"+basefn+'s0.png'
+        elif flg_list[id] == 1 :
+            filename_img = target_dir+"/"+basefn+'s1.png'
+        elif flg_list[id] == 2 :
+            filename_img = target_dir+"/"+basefn+'s2.png'
+        print(filename_img)
+        if os.path.isfile( filename_img ):
+            return
+            
+        fn0 = get_fn_small_image(fnfull, id, target_dir)
+        if fn0 == '' :
+            return
+        if fn0 == filename_img :
+            return
+        os.rename( fn0, filename_img)
  
 # もし　small imageがあれば、ファイル名、なければ ''
 def get_fn_small_image( fnfull, id=0, target_dir='C:/Users/root/Documents/Python Scripts/gym/tmp' ): #path_dir, detect_frame, xc, yc):

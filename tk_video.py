@@ -425,7 +425,7 @@ class GUI:
             ans=1
         if self.flg1.get()=='2':
             ans=2
-        bmp2avi_lib.rename_small_image(self.cvv.fn, ans)
+        bmp2avi_lib.rename_small_image(self.cvv.fn, self.cvv.flg1_list)
         return
 
         outfilename_non   = self.cvv.fn.replace(".avi","s.png")
