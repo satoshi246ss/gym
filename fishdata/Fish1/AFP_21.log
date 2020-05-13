@@ -1,0 +1,377 @@
+21:06:50.508 Lock ON0:  1 Epsi: 0.19 dv: 1.39 th:338 diff:277.40 vvmax:   28 Mag: 0.2[-0.10] xc:  61 yc: 126 sn:  0.0 DF: 55 S: 16
+21:06:50.540 Failure:  1  Epsi: 3.98 dv: 5.17 th: 35 diff:15.49 vvmax:   23 Mag: 0.5 xc:  72 yc: 138 sn:  0.0 sig3: 65 sig3s: 67
+21:06:50.571 Failure:  2  Epsi: 0.94 dv: 1.22 th: 36 diff: 4.94 vvmax:   21 Mag: 0.4 xc:  65 yc: 128 sn:  0.0 sig3: 75 sig3s: 71
+21:06:50.602 Failure:  3  Epsi:17.25 dv:15.05 th: 66 diff:66.61 vvmax:   18 Mag: 0.5 xc: 128 yc: 154 sn:  0.0 sig3: 27 sig3s: 29
+Lost!
+21:06:57.946 Lock ON0:  1 Epsi: 0.19 dv: 0.82 th:105 diff: 2.43 vvmax:   51 Mag:-2.7[-1.17] xc: 560 yc: 139 sn:  0.0 DF:231 S:  6
+21:06:57.977 Failure:  1  Epsi: 1.89 dv: 1.45 th:278 diff: 7.65 vvmax:   46 Mag: 0.0 xc: 553 yc: 140 sn:  0.0 sig3: 23 sig3s: 16
+21:06:58.008 Lock ON0:  2 Epsi: 0.28 dv: 0.64 th:125 diff: 1.20 vvmax:   42 Mag:-2.6[-0.87] xc: 560 yc: 138 DF:139 S:  6
+21:06:58.086 Failure:  1  Epsi: 0.99 dv: 0.13 th:242 diff: 3.43 vvmax:   48 Mag: 0.5 xc: 558 yc: 139 sn:  0.0 sig3: 34 sig3s: 18
+21:06:58.102 Lock ON0:  3 Epsi: 0.79 dv: 0.35 th: 55 diff: 3.25 vvmax:   42 Mag:-1.7[-0.52] xc: 560 yc: 140 DF:-193 S:  6
+21:06:58.118 Failure:  1  Epsi: 0.96 dv: 0.12 th:285 diff: 2.51 vvmax:   58 Mag:-1.7 xc: 559 yc: 138 sn:  0.0 sig3: 64 sig3s: 37
+21:06:58.149 Lock ON0:  4 Epsi: 1.03 dv: 0.31 th:291 diff: 3.37 vvmax:   45 Mag: 0.5[-0.11] xc: 558 yc: 139 DF: 40 S:  6
+21:06:58.180 Failure:  1  Epsi: 4.56 dv: 2.71 th:258 diff:15.16 vvmax:   47 Mag: 0.5 xc: 544 yc: 134 sn:  0.0 sig3: 15 sig3s: 11
+21:06:58.211 Lock ON0:  5 Epsi: 1.14 dv: 0.24 th:317 diff: 1.81 vvmax:   45 Mag:-2.7[-0.59] xc: 560 yc: 139 DF:223 S:  6
+21:06:58.243 Lock ON0:  6 Epsi: 0.96 dv: 0.34 th:230 diff: 1.46 vvmax:   56 Mag: 0.5[-0.19] xc: 558 yc: 139 DF: 25 S:  6
+21:06:58.290 Lock ON0:  7 Epsi: 0.77 dv: 0.31 th:103 diff: 1.52 vvmax:   62 Mag:-2.8[-0.84] xc: 560 yc: 138 DF:137 S:  6
+21:06:58.305 Lock ON0:  8 Epsi: 0.92 dv: 0.20 th:357 diff: 1.49 vvmax:   59 Mag:-0.6[-0.54] xc: 559 yc: 140 DF:-250 S:  6
+21:06:58.352 Lock ON0:  9 Epsi: 0.92 dv: 0.16 th: 41 diff: 1.37 vvmax:   70 Mag:-1.9[-0.92] xc: 559 yc: 138 DF:121 S:  6
+21:06:58.383 Lock ON0: 10 Epsi: 0.73 dv: 0.48 th:219 diff: 1.41 vvmax:   66 Mag:-1.9[-0.93] xc: 559 yc: 138 DF:103 S:  6
+21:06:58.415 Lock ON0: 11 Epsi: 0.68 dv: 0.49 th:192 diff: 0.99 vvmax:   57 Mag:-2.1[-0.99] xc: 559 yc: 139 DF:200 S:  6
+21:06:58.446 Lock ON0: 12 Epsi: 0.60 dv: 0.35 th:248 diff: 1.25 vvmax:   58 Mag: 0.0[-0.36] xc: 558 yc: 138 DF: 40 S:  6
+21:06:58.477 Lock ON0: 13 Epsi: 0.59 dv: 0.31 th:296 diff: 1.18 vvmax:   64 Mag:-2.1[-0.99] xc: 559 yc: 139 DF:200 S:  5
+21:06:58.508 Failure:  1  Epsi: 0.59 dv: 0.24 th:188 diff: 1.13 vvmax:   72 Mag:-0.2 xc: 558 yc: 138 sn:  0.0 sig3: 41 sig3s: 28
+21:06:58.540 Failure:  2  Epsi: 0.56 dv: 0.14 th: 86 diff: 1.51 vvmax:   59 Mag:-1.9 xc: 559 yc: 138 sn:  0.0 sig3: 67 sig3s: 44
+21:06:58.586 Lock ON0: 14 Epsi: 0.45 dv: 0.39 th: 93 diff: 0.67 vvmax:   65 Mag:-2.0[-0.72] xc: 559 yc: 138 DF:121 S:  5
+21:06:58.618 Failure:  1  Epsi: 0.48 dv: 0.23 th:201 diff: 1.82 vvmax:   57 Mag: 0.3 xc: 558 yc: 138 sn:  0.0 sig3: 39 sig3s: 25
+21:06:58.649 Failure:  2  Epsi: 0.58 dv: 0.20 th:248 diff: 2.60 vvmax:   51 Mag:-0.5 xc: 558 yc: 138 sn:  0.0 sig3: 42 sig3s: 27
+21:06:58.680 Failure:  3  Epsi: 0.74 dv: 0.03 th:264 diff: 2.12 vvmax:   78 Mag:-2.8 xc: 560 yc: 138 sn:  0.0 sig3:112 sig3s: 71
+Lost!
+21:07:28.540 Lock ON0:  1 Epsi: 0.16 dv: 1.10 th:215 diff: 6.53 vvmax:  245 Mag: 0.3[-0.05] xc: 521 yc:  92 sn:  0.0 DF:200 S:  8
+21:07:28.571 Failure:  1  Epsi: 1.89 dv: 2.42 th:148 diff: 7.60 vvmax:   12 Mag: 0.5 xc: 527 yc:  87 sn:  0.0 sig3: 10 sig3s: 14
+21:07:28.618 Failure:  2  Epsi: 0.39 dv: 0.78 th:247 diff: 2.18 vvmax:   18 Mag: 0.5 xc: 519 yc:  93 sn:  0.0 sig3: 16 sig3s: 10
+21:07:28.649 Failure:  3  Epsi: 0.84 dv: 1.37 th:271 diff: 2.35 vvmax:   11 Mag: 0.5 xc: 516 yc:  93 sn:  0.0 sig3: 10 sig3s: 13
+Lost!
+21:07:59.383 Lock ON0:  1 Epsi: 0.17 dv: 1.76 th:284 diff: 0.46 vvmax:  237 Mag:-3.7[-0.02] xc: 267 yc:  22 sn:  0.0 DF: 99 S: 13
+21:07:59.415 Lock ON0:  2 Epsi: 0.19 dv: 1.66 th:282 diff: 0.35 vvmax:  238 Mag:-3.6[ 0.01] xc: 266 yc:  23 DF:102 S: 11
+21:07:59.446 Lock ON0:  3 Epsi: 0.36 dv: 1.39 th:279 diff: 1.08 vvmax:  236 Mag:-3.7[-0.01] xc: 265 yc:  23 DF:100 S: 12
+21:07:59.477 Lock ON0:  4 Epsi: 0.29 dv: 0.82 th:277 diff: 1.35 vvmax:  238 Mag:-3.6[ 0.01] xc: 265 yc:  23 DF: 98 S: 11
+21:07:59.508 Lock ON0:  5 Epsi: 0.09 dv: 0.52 th:285 diff: 0.52 vvmax:  235 Mag:-3.7[-0.02] xc: 264 yc:  23 DF: 99 S: 12
+21:07:59.540 Lock ON0:  6 Epsi: 0.08 dv: 0.51 th:286 diff: 0.07 vvmax:  235 Mag:-3.6[ 0.01] xc: 264 yc:  23 DF: 98 S: 12
+21:07:59.571 Lock ON0:  7 Epsi: 0.08 dv: 0.55 th:288 diff: 0.11 vvmax:  235 Mag:-3.7[-0.02] xc: 263 yc:  23 DF:100 S: 11
+21:07:59.602 Lock ON0:  8 Epsi: 0.05 dv: 0.51 th:276 diff: 0.25 vvmax:  232 Mag:-3.6[ 0.01] xc: 263 yc:  23 DF:100 S: 12
+21:07:59.649 Lock ON0:  9 Epsi: 0.06 dv: 0.50 th:268 diff: 0.21 vvmax:  236 Mag:-3.7[-0.02] xc: 262 yc:  23 DF:101 S: 11
+21:07:59.680 Lock ON0: 10 Epsi: 0.04 dv: 0.47 th:269 diff: 0.10 vvmax:  233 Mag:-3.6[ 0.01] xc: 262 yc:  23 DF:102 S: 14
+21:07:59.711 Lock ON0: 11 Epsi: 0.05 dv: 0.50 th:274 diff: 0.13 vvmax:  237 Mag:-3.7[-0.02] xc: 261 yc:  23 DF:102 S: 11
+21:07:59.743 Lock ON0: 12 Epsi: 0.04 dv: 0.55 th:285 diff: 0.28 vvmax:  237 Mag:-3.5[ 0.03] xc: 261 yc:  24 DF:100 S: 14
+21:07:59.774 Lock ON0: 13 Epsi: 0.05 dv: 0.58 th:285 diff: 0.06 vvmax:  232 Mag:-3.6[-0.01] xc: 260 yc:  24 DF:100 S: 11
+21:07:59.805 Lock ON0: 14 Epsi: 0.05 dv: 0.56 th:287 diff: 0.09 vvmax:  237 Mag:-3.5[ 0.03] xc: 260 yc:  24 DF:100 S: 13
+21:07:59.836 Lock ON0: 15 Epsi: 0.06 dv: 0.49 th:279 diff: 0.28 vvmax:  232 Mag:-3.7[-0.02] xc: 259 yc:  24 DF:100 S: 11
+21:07:59.883 Lock ON0: 16 Epsi: 0.07 dv: 0.49 th:283 diff: 0.16 vvmax:  237 Mag:-3.5[ 0.02] xc: 259 yc:  24 DF: 99 S: 13
+21:07:59.915 Lock ON0: 17 Epsi: 0.07 dv: 0.54 th:283 diff: 0.12 vvmax:  237 Mag:-3.7[-0.02] xc: 258 yc:  24 DF:100 S: 11
+21:07:59.946 Lock ON0: 18 Epsi: 0.06 dv: 0.56 th:284 diff: 0.05 vvmax:  236 Mag:-3.6[-0.00] xc: 257 yc:  24 DF:100 S: 12
+21:07:59.977 Lock ON0: 19 Epsi: 0.05 dv: 0.50 th:274 diff: 0.27 vvmax:  234 Mag:-3.7[-0.01] xc: 257 yc:  24 DF:100 S: 12
+21:08:00.008 Lock ON0: 20 Epsi: 0.08 dv: 0.50 th:282 diff: 0.30 vvmax:  236 Mag:-3.6[-0.01] xc: 256 yc:  24 DF: 98 S: 12
+21:08:00.040 Lock ON0: 21 Epsi: 0.09 dv: 0.52 th:282 diff: 0.08 vvmax:  231 Mag:-3.7[-0.01] xc: 256 yc:  24 DF:101 S: 12
+21:08:00.071 Lock ON0: 22 Epsi: 0.09 dv: 0.51 th:283 diff: 0.10 vvmax:  235 Mag:-3.5[ 0.04] xc: 256 yc:  25 DF:100 S: 13
+21:08:00.118 Lock ON0: 23 Epsi: 0.06 dv: 0.50 th:277 diff: 0.02 vvmax:  230 Mag:-3.7[-0.01] xc: 255 yc:  25 DF:100 S: 12
+21:08:00.149 Lock ON0: 24 Epsi: 0.04 dv: 0.53 th:282 diff: 0.11 vvmax:  238 Mag:-3.6[-0.00] xc: 254 yc:  25 DF:100 S: 13
+21:08:00.180 Lock ON0: 25 Epsi: 0.04 dv: 0.53 th:282 diff: 0.06 vvmax:  233 Mag:-3.7[-0.02] xc: 254 yc:  25 DF:101 S: 11
+21:08:00.211 Lock ON0: 26 Epsi: 0.32 dv: 0.41 th:327 diff: 1.25 vvmax:  239 Mag:-3.5[ 0.04] xc: 254 yc:  26 DF: 99 S: 26
+21:08:00.243 Lock ON0: 27 Epsi: 0.39 dv: 0.40 th:302 diff: 1.02 vvmax:  243 Mag:-3.6[-0.01] xc: 253 yc:  25 DF: 99 S: 16
+21:08:00.274 Lock ON0: 28 Epsi: 0.40 dv: 0.55 th:276 diff: 0.69 vvmax:  237 Mag:-3.5[ 0.02] xc: 253 yc:  25 DF:100 S: 12
+21:08:00.305 Lock ON0: 29 Epsi: 0.23 dv: 0.79 th:261 diff: 0.20 vvmax:  234 Mag:-3.7[-0.02] xc: 252 yc:  25 DF: 99 S: 11
+21:08:00.336 Lock ON0: 30 Epsi: 0.05 dv: 0.57 th:274 diff: 0.44 vvmax:  234 Mag:-3.6[ 0.00] xc: 251 yc:  25 DF: 99 S: 13
+21:08:00.383 Lock ON0: 31 Epsi: 0.08 dv: 0.53 th:278 diff: 0.24 vvmax:  244 Mag:-3.6[-0.00] xc: 251 yc:  26 DF:100 S: 11
+21:08:00.415 Lock ON0: 32 Epsi: 0.09 dv: 0.48 th:275 diff: 0.19 vvmax:  236 Mag:-3.5[ 0.02] xc: 251 yc:  25 DF:100 S: 14
+21:08:00.446 Lock ON0: 33 Epsi: 0.13 dv: 0.54 th:290 diff: 0.44 vvmax:  235 Mag:-3.7[-0.01] xc: 250 yc:  26 DF: 99 S: 11
+21:08:00.477 Lock ON0: 34 Epsi: 0.13 dv: 0.57 th:285 diff: 0.14 vvmax:  230 Mag:-3.7[-0.02] xc: 249 yc:  26 DF:101 S: 14
+21:08:00.508 Lock ON0: 35 Epsi: 0.12 dv: 0.58 th:294 diff: 0.16 vvmax:  242 Mag:-3.7[-0.02] xc: 249 yc:  26 DF: 99 S: 12
+21:08:00.540 Lock ON0: 36 Epsi: 0.08 dv: 0.48 th:278 diff: 0.39 vvmax:  231 Mag:-3.7[-0.01] xc: 248 yc:  26 DF:101 S: 13
+21:08:00.571 Lock ON0: 37 Epsi: 0.07 dv: 0.44 th:277 diff: 0.09 vvmax:  236 Mag:-3.5[ 0.03] xc: 248 yc:  26 DF:101 S: 20
+21:08:00.618 Lock ON0: 38 Epsi: 0.06 dv: 0.45 th:273 diff: 0.05 vvmax:  233 Mag:-3.6[ 0.01] xc: 248 yc:  26 DF:101 S: 14
+21:08:00.649 Lock ON0: 39 Epsi: 0.07 dv: 0.51 th:288 diff: 0.37 vvmax:  236 Mag:-3.6[-0.00] xc: 247 yc:  27 DF:100 S: 13
+21:08:00.680 Lock ON0: 40 Epsi: 0.04 dv: 0.54 th:292 diff: 0.04 vvmax:  233 Mag:-3.5[ 0.03] xc: 247 yc:  27 DF: 99 S: 13
+21:08:00.711 Lock ON0: 41 Epsi: 0.10 dv: 0.55 th:283 diff: 0.31 vvmax:  235 Mag:-3.7[-0.01] xc: 246 yc:  27 DF:101 S: 12
+21:08:00.743 Lock ON0: 42 Epsi: 0.07 dv: 0.50 th:281 diff: 0.15 vvmax:  237 Mag:-3.6[ 0.01] xc: 246 yc:  27 DF:100 S: 15
+21:08:00.774 Lock ON0: 43 Epsi: 0.07 dv: 0.49 th:284 diff: 0.08 vvmax:  238 Mag:-3.7[-0.03] xc: 245 yc:  27 DF:100 S: 14
+21:08:00.805 Lock ON0: 44 Epsi: 0.05 dv: 0.49 th:296 diff: 0.23 vvmax:  237 Mag:-3.6[-0.00] xc: 245 yc:  27 DF: 98 S: 12
+21:08:00.836 Lock ON0: 45 Epsi: 0.06 dv: 0.53 th:287 diff: 0.25 vvmax:  234 Mag:-3.7[-0.03] xc: 244 yc:  27 DF: 99 S: 12
+21:08:00.883 Lock ON0: 46 Epsi: 0.09 dv: 0.51 th:280 diff: 0.24 vvmax:  233 Mag:-3.6[-0.00] xc: 244 yc:  27 DF:100 S: 14
+21:08:00.915 Lock ON0: 47 Epsi: 0.08 dv: 0.51 th:277 diff: 0.11 vvmax:  236 Mag:-3.7[-0.01] xc: 243 yc:  28 DF: 98 S: 13
+21:08:00.946 Lock ON0: 48 Epsi: 0.07 dv: 0.47 th:278 diff: 0.11 vvmax:  236 Mag:-3.6[-0.00] xc: 243 yc:  27 DF:101 S: 14
+21:08:00.977 Lock ON0: 49 Epsi: 0.11 dv: 0.53 th:290 diff: 0.39 vvmax:  235 Mag:-3.7[-0.02] xc: 242 yc:  28 DF:101 S: 13
+21:08:01.008 Lock ON0: 50 Epsi: 0.11 dv: 0.53 th:288 diff: 0.06 vvmax:  234 Mag:-3.6[ 0.00] xc: 242 yc:  28 DF: 99 S: 15
+21:08:01.040 Lock ON0: 51 Epsi: 0.09 dv: 0.55 th:292 diff: 0.02 vvmax:  237 Mag:-3.7[-0.03] xc: 241 yc:  28 DF:100 S: 12
+21:08:01.071 Lock ON0: 52 Epsi: 0.04 dv: 0.48 th:276 diff: 0.35 vvmax:  237 Mag:-3.6[-0.01] xc: 241 yc:  28 DF: 99 S: 14
+21:08:01.118 Lock ON0: 53 Epsi: 0.08 dv: 0.52 th:284 diff: 0.30 vvmax:  234 Mag:-3.7[-0.03] xc: 240 yc:  28 DF:100 S: 13
+21:08:01.149 Lock ON0: 54 Epsi: 0.12 dv: 0.46 th:280 diff: 0.29 vvmax:  233 Mag:-3.7[-0.01] xc: 240 yc:  28 DF:100 S: 13
+21:08:01.180 Lock ON0: 55 Epsi: 0.12 dv: 0.49 th:284 diff: 0.16 vvmax:  235 Mag:-3.7[-0.02] xc: 239 yc:  28 DF:100 S: 14
+21:08:01.211 Lock ON0: 56 Epsi: 0.10 dv: 0.49 th:279 diff: 0.04 vvmax:  229 Mag:-3.7[-0.01] xc: 239 yc:  29 DF:101 S: 13
+21:08:01.243 Lock ON0: 57 Epsi: 0.09 dv: 0.51 th:290 diff: 0.21 vvmax:  233 Mag:-3.6[ 0.01] xc: 238 yc:  29 DF:100 S: 16
+21:08:01.290 Lock ON0: 58 Epsi: 0.05 dv: 0.47 th:290 diff: 0.01 vvmax:  250 Mag:-3.7[-0.02] xc: 238 yc:  29 DF: 98 S: 13
+21:08:01.305 Lock ON0: 59 Epsi: 0.04 dv: 0.50 th:292 diff: 0.10 vvmax:  234 Mag:-3.7[-0.02] xc: 237 yc:  29 DF: 99 S: 13
+21:08:01.352 Lock ON0: 60 Epsi: 0.01 dv: 0.55 th:289 diff: 0.11 vvmax:  238 Mag:-3.7[-0.03] xc: 237 yc:  29 DF: 99 S: 12
+21:08:01.383 Lock ON0: 61 Epsi: 0.09 dv: 0.50 th:279 diff: 0.35 vvmax:  235 Mag:-3.7[-0.01] xc: 236 yc:  29 DF: 98 S: 15
+21:08:01.415 Lock ON0: 62 Epsi: 0.08 dv: 0.47 th:278 diff: 0.12 vvmax:  236 Mag:-3.7[-0.03] xc: 236 yc:  29 DF: 99 S: 12
+21:08:01.446 Lock ON0: 63 Epsi: 0.11 dv: 0.49 th:283 diff: 0.22 vvmax:  235 Mag:-3.6[-0.01] xc: 235 yc:  30 DF: 98 S: 15
+21:08:01.477 Lock ON0: 64 Epsi: 0.05 dv: 0.51 th:293 diff: 0.11 vvmax:  241 Mag:-3.7[-0.02] xc: 235 yc:  30 DF: 99 S: 13
+21:08:01.508 Lock ON0: 65 Epsi: 0.14 dv: 0.47 th:274 diff: 0.53 vvmax:  230 Mag:-3.5[ 0.03] xc: 234 yc:  29 DF: 99 S: 15
+21:08:01.540 Lock ON0: 66 Epsi: 0.13 dv: 0.44 th:276 diff: 0.25 vvmax:  236 Mag:-3.7[-0.03] xc: 234 yc:  30 DF:100 S: 14
+21:08:01.571 Lock ON0: 67 Epsi: 0.14 dv: 0.50 th:283 diff: 0.25 vvmax:  232 Mag:-3.7[-0.01] xc: 233 yc:  30 DF:100 S: 15
+21:08:01.618 Lock ON0: 68 Epsi: 0.10 dv: 0.51 th:293 diff: 0.11 vvmax:  234 Mag:-3.7[-0.02] xc: 233 yc:  30 DF:102 S: 13
+21:08:01.649 Lock ON0: 69 Epsi: 0.28 dv: 0.64 th:313 diff: 0.94 vvmax:  238 Mag:-3.5[ 0.03] xc: 233 yc:  31 DF: 99 S: 25
+21:08:01.680 Lock ON0: 70 Epsi: 0.33 dv: 0.56 th:304 diff: 0.79 vvmax:  236 Mag:-3.7[-0.01] xc: 232 yc:  31 DF: 98 S: 13
+21:08:01.711 Lock ON0: 71 Epsi: 0.35 dv: 0.47 th:281 diff: 0.67 vvmax:  237 Mag:-3.6[-0.01] xc: 232 yc:  31 DF: 98 S: 14
+21:08:01.743 Lock ON0: 72 Epsi: 0.20 dv: 0.50 th:248 diff: 0.19 vvmax:  232 Mag:-3.7[-0.02] xc: 231 yc:  31 DF:102 S: 14
+21:08:01.774 Lock ON0: 73 Epsi: 0.12 dv: 0.53 th:286 diff: 0.75 vvmax:  237 Mag:-3.7[-0.02] xc: 231 yc:  31 DF: 99 S: 16
+21:08:01.805 Lock ON0: 74 Epsi: 0.09 dv: 0.55 th:290 diff: 0.10 vvmax:  232 Mag:-3.7[-0.02] xc: 230 yc:  31 DF:100 S: 14
+21:08:01.852 Lock ON0: 75 Epsi: 0.09 dv: 0.51 th:288 diff: 0.14 vvmax:  230 Mag:-3.7[-0.02] xc: 230 yc:  31 DF:100 S: 14
+21:08:01.883 Lock ON0: 76 Epsi: 0.05 dv: 0.45 th:282 diff: 0.12 vvmax:  236 Mag:-3.7[-0.02] xc: 229 yc:  31 DF: 99 S: 15
+21:08:01.915 Lock ON0: 77 Epsi: 0.09 dv: 0.53 th:294 diff: 0.38 vvmax:  235 Mag:-3.6[-0.01] xc: 229 yc:  32 DF:101 S: 14
+21:08:01.946 Lock ON0: 78 Epsi: 0.12 dv: 0.46 th:289 diff: 0.37 vvmax:  232 Mag:-3.7[-0.01] xc: 228 yc:  32 DF:100 S: 15
+21:08:01.977 Lock ON0: 79 Epsi: 0.14 dv: 0.51 th:288 diff: 0.18 vvmax:  233 Mag:-3.7[-0.02] xc: 228 yc:  32 DF:101 S: 14
+21:08:02.008 Lock ON0: 80 Epsi: 0.28 dv: 0.64 th:302 diff: 0.76 vvmax:  232 Mag:-3.6[ 0.01] xc: 227 yc:  33 DF:100 S: 20
+21:08:02.040 Lock ON0: 81 Epsi: 0.34 dv: 0.53 th:292 diff: 0.97 vvmax:  235 Mag:-3.7[-0.02] xc: 227 yc:  32 DF:101 S: 14
+21:08:02.086 Lock ON0: 82 Epsi: 0.30 dv: 0.44 th:265 diff: 0.46 vvmax:  232 Mag:-3.7[-0.01] xc: 226 yc:  32 DF:101 S: 16
+21:08:02.118 Lock ON0: 83 Epsi: 0.24 dv: 0.42 th:244 diff: 0.12 vvmax:  236 Mag:-3.7[-0.03] xc: 226 yc:  32 DF: 98 S: 14
+21:08:02.149 Lock ON0: 84 Epsi: 0.09 dv: 0.50 th:288 diff: 0.71 vvmax:  240 Mag:-3.6[-0.00] xc: 226 yc:  32 DF:100 S: 14
+21:08:02.180 Lock ON0: 85 Epsi: 0.08 dv: 0.48 th:294 diff: 0.11 vvmax:  234 Mag:-3.7[-0.01] xc: 225 yc:  33 DF:100 S: 15
+21:08:02.211 Lock ON0: 86 Epsi: 0.07 dv: 0.51 th:297 diff: 0.05 vvmax:  236 Mag:-3.6[-0.01] xc: 225 yc:  33 DF:100 S: 16
+21:08:02.243 Lock ON0: 87 Epsi: 0.08 dv: 0.36 th:286 diff: 0.44 vvmax:  233 Mag:-3.5[ 0.03] xc: 225 yc:  33 DF:100 S: 18
+21:08:02.290 Lock ON0: 88 Epsi: 0.14 dv: 0.45 th:292 diff: 0.45 vvmax:  235 Mag:-3.7[-0.02] xc: 224 yc:  33 DF:100 S: 14
+21:08:02.305 Lock ON0: 89 Epsi: 0.14 dv: 0.57 th:294 diff: 0.29 vvmax:  229 Mag:-3.7[-0.02] xc: 223 yc:  33 DF:101 S: 15
+21:08:02.352 Lock ON0: 90 Epsi: 0.22 dv: 0.55 th:286 diff: 0.49 vvmax:  233 Mag:-3.7[-0.02] xc: 223 yc:  33 DF: 99 S: 13
+21:08:02.383 Lock ON0: 91 Epsi: 0.16 dv: 0.48 th:286 diff: 0.27 vvmax:  234 Mag:-3.6[-0.00] xc: 222 yc:  34 DF: 98 S: 15
+21:08:02.415 Lock ON0: 92 Epsi: 0.17 dv: 0.45 th:285 diff: 0.14 vvmax:  234 Mag:-3.7[-0.01] xc: 222 yc:  34 DF:101 S: 13
+21:08:02.446 Lock ON0: 93 Epsi: 0.14 dv: 0.51 th:291 diff: 0.10 vvmax:  230 Mag:-3.6[ 0.01] xc: 222 yc:  34 DF:100 S: 15
+21:08:02.477 Lock ON0: 94 Epsi: 0.08 dv: 0.47 th:280 diff: 0.09 vvmax:  235 Mag:-3.7[-0.02] xc: 221 yc:  34 DF:101 S: 16
+21:08:02.508 Lock ON0: 95 Epsi: 0.03 dv: 0.52 th:288 diff: 0.08 vvmax:  231 Mag:-3.6[-0.00] xc: 221 yc:  34 DF:100 S: 15
+21:08:02.540 Lock ON0: 96 Epsi: 0.03 dv: 0.47 th:283 diff: 0.17 vvmax:  232 Mag:-3.7[-0.03] xc: 220 yc:  34 DF:101 S: 14
+21:08:02.586 Lock ON0: 97 Epsi: 0.07 dv: 0.48 th:291 diff: 0.25 vvmax:  233 Mag:-3.7[-0.01] xc: 220 yc:  34 DF:100 S: 14
+21:08:02.618 Lock ON0: 98 Epsi: 0.07 dv: 0.51 th:292 diff: 0.08 vvmax:  232 Mag:-3.6[-0.01] xc: 219 yc:  35 DF:100 S: 15
+21:08:02.649 Lock ON0: 99 Epsi: 0.08 dv: 0.51 th:289 diff: 0.13 vvmax:  227 Mag:-3.7[-0.01] xc: 219 yc:  35 DF:100 S: 16
+21:08:02.680 Lock ON0:100 Epsi: 0.11 dv: 0.48 th:294 diff: 0.28 vvmax:  233 Mag:-3.7[-0.01] xc: 218 yc:  35 DF:101 S: 17
+21:08:02.711 Lock ON0:101 Epsi: 0.13 dv: 0.40 th:291 diff: 0.35 vvmax:  233 Mag:-3.7[-0.02] xc: 218 yc:  35 DF:100 S: 14
+21:08:02.743 Lock ON0:102 Epsi: 0.15 dv: 0.44 th:293 diff: 0.20 vvmax:  236 Mag:-3.6[-0.00] xc: 217 yc:  35 DF: 98 S: 16
+21:08:02.774 Lock ON0:103 Epsi: 0.12 dv: 0.45 th:280 diff: 0.19 vvmax:  232 Mag:-3.7[-0.02] xc: 217 yc:  35 DF:100 S: 16
+21:08:02.821 Lock ON0:104 Epsi: 0.14 dv: 0.46 th:280 diff: 0.19 vvmax:  235 Mag:-3.7[-0.01] xc: 217 yc:  35 DF: 99 S: 15
+21:08:02.852 Lock ON0:105 Epsi: 0.10 dv: 0.44 th:276 diff: 0.16 vvmax:  231 Mag:-3.7[-0.01] xc: 216 yc:  35 DF: 98 S: 15
+21:08:02.883 Lock ON0:106 Epsi: 0.12 dv: 0.51 th:296 diff: 0.46 vvmax:  234 Mag:-3.6[-0.01] xc: 216 yc:  36 DF:102 S: 16
+21:08:02.915 Lock ON0:107 Epsi: 0.10 dv: 0.50 th:300 diff: 0.19 vvmax:  234 Mag:-3.7[-0.02] xc: 215 yc:  36 DF: 98 S: 15
+21:08:02.946 Lock ON0:108 Epsi: 0.11 dv: 0.36 th:286 diff: 0.44 vvmax:  230 Mag:-3.7[-0.02] xc: 215 yc:  36 DF:101 S: 11
+21:08:02.977 Failure:  1  Epsi: 0.08 dv: 0.22 th:279 diff: 0.34 vvmax:  231 Mag:-3.6 xc: 215 yc:  36 sn:  0.0 sig3:229 sig3s: 26
+21:08:03.008 Failure:  2  Epsi: 0.07 dv: 0.27 th:283 diff: 0.25 vvmax:  221 Mag:-3.5 xc: 215 yc:  36 sn:  0.0 sig3:210 sig3s: 32
+21:08:03.040 Lock ON0:109 Epsi: 0.11 dv: 0.34 th:291 diff: 0.26 vvmax:  232 Mag:-3.6[ 0.01] xc: 214 yc:  36 DF:100 S: 10
+21:08:03.086 Lock ON0:110 Epsi: 0.25 dv: 0.50 th:304 diff: 0.82 vvmax:  232 Mag:-3.6[ 0.01] xc: 213 yc:  37 DF:101 S: 16
+21:08:03.118 Lock ON0:111 Epsi: 0.26 dv: 0.52 th:293 diff: 0.58 vvmax:  226 Mag:-3.5[ 0.04] xc: 213 yc:  37 DF:103 S: 10
+21:08:03.149 Lock ON0:112 Epsi: 0.24 dv: 0.43 th:282 diff: 0.26 vvmax:  227 Mag:-3.6[ 0.02] xc: 213 yc:  37 DF:100 S:  9
+21:08:03.180 Lock ON0:113 Epsi: 0.16 dv: 0.40 th:258 diff: 0.17 vvmax:  236 Mag:-3.5[ 0.02] xc: 212 yc:  37 DF:100 S: 10
+21:08:03.211 Lock ON0:114 Epsi: 0.10 dv: 0.42 th:291 diff: 0.51 vvmax:  233 Mag:-3.6[ 0.01] xc: 212 yc:  37 DF: 97 S: 11
+21:08:03.243 Lock ON0:115 Epsi: 0.09 dv: 0.39 th:298 diff: 0.15 vvmax:  230 Mag:-3.5[ 0.03] xc: 212 yc:  37 DF:100 S: 12
+21:08:03.290 Saturation:  1  Epsi: 0.17 dv: 0.26 th:295 diff: 0.51 vvmax:  230 Mag:-3.6 xc: 212 yc:  37 DF: 98 S: 13
+21:08:03.321 Lock ON0:116 Epsi: 0.20 dv: 0.41 th:284 diff: 0.58 vvmax:  233 Mag:-3.5[ 0.03] xc: 211 yc:  37 DF: 98 S: 10
+21:08:03.352 Lock ON0:117 Epsi: 0.21 dv: 0.55 th:292 diff: 0.46 vvmax:  232 Mag:-3.6[ 0.01] xc: 210 yc:  38 DF: 99 S: 11
+21:08:03.383 Lock ON0:118 Epsi: 0.12 dv: 0.70 th:296 diff: 0.12 vvmax:  226 Mag:-3.6[ 0.00] xc: 210 yc:  38 DF:100 S: 10
+21:08:03.415 Lock ON0:119 Epsi: 0.15 dv: 0.59 th:278 diff: 0.64 vvmax:  232 Mag:-3.6[ 0.01] xc: 209 yc:  38 DF:100 S: 18
+21:08:03.446 Lock ON0:120 Epsi: 0.15 dv: 0.50 th:277 diff: 0.40 vvmax:  230 Mag:-3.6[ 0.00] xc: 209 yc:  38 DF:100 S: 12
+21:08:03.477 Lock ON0:121 Epsi: 0.15 dv: 0.43 th:290 diff: 0.31 vvmax:  235 Mag:-3.5[ 0.03] xc: 208 yc:  38 DF: 98 S: 12
+21:08:03.508 Lock ON0:122 Epsi: 0.10 dv: 0.38 th:303 diff: 0.13 vvmax:  232 Mag:-3.6[ 0.02] xc: 208 yc:  38 DF:100 S: 11
+21:08:03.540 Lock ON0:123 Epsi: 0.06 dv: 0.39 th:294 diff: 0.04 vvmax:  224 Mag:-3.6[ 0.02] xc: 208 yc:  39 DF:101 S: 11
+21:08:03.586 Lock ON0:124 Epsi: 0.06 dv: 0.41 th:297 diff: 0.11 vvmax:  234 Mag:-3.6[ 0.01] xc: 207 yc:  39 DF: 98 S: 12
+21:08:03.618 Lock ON0:125 Epsi: 0.05 dv: 0.45 th:296 diff: 0.08 vvmax:  225 Mag:-3.6[ 0.00] xc: 207 yc:  39 DF:100 S: 11
+21:08:03.649 Lock ON0:126 Epsi: 0.04 dv: 0.44 th:295 diff: 0.06 vvmax:  230 Mag:-3.5[ 0.03] xc: 207 yc:  39 DF:100 S: 12
+21:08:03.680 Lock ON0:127 Epsi: 0.04 dv: 0.43 th:294 diff: 0.06 vvmax:  230 Mag:-3.6[-0.00] xc: 206 yc:  39 DF: 98 S: 11
+21:08:03.711 Lock ON0:128 Epsi: 0.13 dv: 0.47 th:279 diff: 0.42 vvmax:  232 Mag:-3.4[ 0.06] xc: 205 yc:  39 DF: 99 S: 12
+21:08:03.743 Lock ON0:129 Epsi: 0.14 dv: 0.52 th:285 diff: 0.39 vvmax:  223 Mag:-3.6[ 0.01] xc: 205 yc:  40 DF:103 S: 11
+21:08:03.774 Lock ON0:130 Epsi: 0.18 dv: 0.46 th:297 diff: 0.36 vvmax:  229 Mag:-3.6[ 0.00] xc: 205 yc:  40 DF: 98 S: 10
+21:08:03.821 Lock ON0:131 Epsi: 0.17 dv: 0.48 th:299 diff: 0.22 vvmax:  226 Mag:-3.6[ 0.02] xc: 204 yc:  40 DF:101 S: 12
+21:08:03.852 Lock ON0:132 Epsi: 0.09 dv: 0.44 th:283 diff: 0.21 vvmax:  228 Mag:-3.6[-0.00] xc: 204 yc:  40 DF: 98 S: 12
+21:08:03.883 Lock ON0:133 Epsi: 0.09 dv: 0.46 th:286 diff: 0.11 vvmax:  226 Mag:-3.5[ 0.03] xc: 203 yc:  40 DF:101 S: 12
+21:08:03.915 Lock ON0:134 Epsi: 0.05 dv: 0.43 th:291 diff: 0.07 vvmax:  230 Mag:-3.6[ 0.00] xc: 203 yc:  40 DF:100 S: 10
+21:08:03.946 Lock ON0:135 Epsi: 0.05 dv: 0.43 th:290 diff: 0.07 vvmax:  228 Mag:-3.6[ 0.02] xc: 203 yc:  40 DF:101 S: 11
+21:08:03.977 Lock ON0:136 Epsi: 0.05 dv: 0.45 th:290 diff: 0.07 vvmax:  228 Mag:-3.6[ 0.01] xc: 202 yc:  41 DF:102 S: 12
+21:08:04.008 Lock ON0:137 Epsi: 0.05 dv: 0.45 th:293 diff: 0.06 vvmax:  233 Mag:-3.6[ 0.01] xc: 202 yc:  41 DF:100 S: 11
+21:08:04.055 Lock ON0:138 Epsi: 0.04 dv: 0.53 th:291 diff: 0.20 vvmax:  230 Mag:-3.6[ 0.02] xc: 201 yc:  41 DF: 98 S: 13
+21:08:04.086 Lock ON0:139 Epsi: 0.05 dv: 0.50 th:293 diff: 0.13 vvmax:  235 Mag:-3.6[-0.01] xc: 201 yc:  41 DF: 99 S: 12
+21:08:04.118 Lock ON0:140 Epsi: 0.09 dv: 0.44 th:289 diff: 0.23 vvmax:  232 Mag:-3.4[ 0.05] xc: 200 yc:  41 DF: 97 S: 12
+21:08:04.149 Lock ON0:141 Epsi: 0.07 dv: 0.40 th:300 diff: 0.25 vvmax:  236 Mag:-3.6[ 0.01] xc: 200 yc:  42 DF: 98 S: 11
+21:08:04.180 Lock ON0:142 Epsi: 0.08 dv: 0.42 th:307 diff: 0.18 vvmax:  227 Mag:-3.6[ 0.01] xc: 200 yc:  42 DF: 98 S: 10
+21:08:04.211 Lock ON0:143 Epsi: 0.12 dv: 0.43 th:302 diff: 0.29 vvmax:  226 Mag:-3.6[ 0.01] xc: 199 yc:  42 DF:101 S: 12
+21:08:04.258 Lock ON0:144 Epsi: 0.08 dv: 0.38 th:292 diff: 0.11 vvmax:  230 Mag:-3.6[-0.01] xc: 199 yc:  42 DF:101 S: 12
+21:08:04.290 Lock ON0:145 Epsi: 0.18 dv: 0.38 th:313 diff: 0.52 vvmax:  233 Mag:-3.6[ 0.01] xc: 199 yc:  43 DF:100 S: 16
+21:08:04.321 Lock ON0:146 Epsi: 0.25 dv: 0.45 th:295 diff: 0.77 vvmax:  227 Mag:-3.6[ 0.00] xc: 198 yc:  42 DF:100 S: 13
+21:08:04.352 Lock ON0:147 Epsi: 0.22 dv: 0.56 th:275 diff: 0.42 vvmax:  227 Mag:-3.6[ 0.01] xc: 198 yc:  42 DF: 98 S: 12
+21:08:04.383 Lock ON0:148 Epsi: 0.21 dv: 0.59 th:269 diff: 0.20 vvmax:  232 Mag:-3.5[ 0.02] xc: 197 yc:  43 DF:101 S: 11
+21:08:04.415 Lock ON0:149 Epsi: 0.11 dv: 0.36 th:301 diff: 0.77 vvmax:  221 Mag:-3.6[ 0.01] xc: 197 yc:  43 DF:101 S: 12
+21:08:04.446 Lock ON0:150 Epsi: 0.13 dv: 0.36 th:292 diff: 0.35 vvmax:  227 Mag:-3.5[ 0.04] xc: 196 yc:  43 DF:100 S: 13
+21:08:04.493 Lock ON0:151 Epsi: 0.37 dv: 0.67 th:315 diff: 1.25 vvmax:  235 Mag:-3.6[ 0.01] xc: 196 yc:  44 DF:100 S: 17
+21:08:04.508 Lock ON0:152 Epsi: 0.46 dv: 0.54 th:294 diff: 1.19 vvmax:  228 Mag:-3.6[ 0.00] xc: 196 yc:  43 DF:100 S: 11
+21:08:04.555 Lock ON0:153 Epsi: 0.43 dv: 0.38 th:284 diff: 0.39 vvmax:  233 Mag:-3.6[ 0.02] xc: 195 yc:  44 DF: 98 S: 12
+21:08:04.586 Lock ON0:154 Epsi: 0.36 dv: 0.37 th:255 diff: 0.18 vvmax:  233 Mag:-3.6[ 0.00] xc: 195 yc:  44 DF: 98 S: 10
+21:08:04.618 Lock ON0:155 Epsi: 0.07 dv: 0.49 th:301 diff: 0.47 vvmax:  236 Mag:-3.5[ 0.03] xc: 194 yc:  44 DF: 98 S: 12
+21:08:04.649 Lock ON0:156 Epsi: 0.06 dv: 0.44 th:292 diff: 0.21 vvmax:  230 Mag:-3.6[ 0.00] xc: 194 yc:  44 DF:100 S: 12
+21:08:04.680 Lock ON0:157 Epsi: 0.05 dv: 0.41 th:293 diff: 0.11 vvmax:  232 Mag:-3.6[ 0.01] xc: 194 yc:  44 DF: 97 S: 13
+21:08:04.727 Lock ON0:158 Epsi: 0.05 dv: 0.42 th:292 diff: 0.07 vvmax:  234 Mag:-3.6[ 0.01] xc: 193 yc:  44 DF:101 S: 11
+21:08:04.758 Lock ON0:159 Epsi: 0.07 dv: 0.38 th:302 diff: 0.23 vvmax:  237 Mag:-3.6[ 0.00] xc: 193 yc:  45 DF:101 S: 11
+21:08:05.024 Lock ON0:160 Epsi: 0.10 dv: 0.44 th:295 diff: 0.27 vvmax:  234 Mag:-3.5[ 0.04] xc: 192 yc:  45 DF: 99 S: 12
+21:08:05.133 Lock ON0:161 Epsi: 0.10 dv: 0.45 th:294 diff: 0.09 vvmax:  230 Mag:-3.6[ 0.00] xc: 192 yc:  45 DF: 98 S: 11
+21:08:05.149 Lock ON0:162 Epsi: 0.11 dv: 0.59 th:289 diff: 0.40 vvmax:  234 Mag:-3.3[ 0.09] xc: 191 yc:  45 DF: 99 S: 18
+21:08:05.336 Lock ON0:163 Epsi: 0.16 dv: 0.45 th:299 diff: 0.54 vvmax:  228 Mag:-3.5[ 0.03] xc: 191 yc:  45 DF:100 S: 14
+21:08:05.461 Lock ON0:164 Epsi: 0.16 dv: 0.42 th:302 diff: 0.12 vvmax:  227 Mag:-3.6[ 0.02] xc: 191 yc:  46 DF:101 S: 10
+21:08:05.477 Lock ON0:165 Epsi: 0.59 dv: 0.90 th:290 diff: 1.92 vvmax:  223 Mag:-3.6[ 0.02] xc: 189 yc:  46 DF:103 S: 11
+21:08:05.602 Lock ON0:166 Epsi: 0.37 dv: 1.49 th:294 diff: 1.17 vvmax:  224 Mag:-3.6[ 0.02] xc: 188 yc:  47 DF:101 S: 14
+21:08:05.805 Lock ON0:167 Epsi: 0.49 dv: 1.38 th:292 diff: 0.98 vvmax:  227 Mag:-3.6[-0.00] xc: 187 yc:  47 DF:100 S: 11
+21:08:05.930 Lock ON0:168 Epsi: 0.30 dv: 1.16 th:296 diff: 0.20 vvmax:  229 Mag:-3.6[ 0.02] xc: 185 yc:  48 DF: 98 S: 13
+21:08:05.946 Lock ON0:169 Epsi: 0.39 dv: 1.48 th:296 diff: 1.03 vvmax:  226 Mag:-3.6[ 0.02] xc: 184 yc:  49 DF:100 S: 11
+21:08:05.961 Lock ON0:170 Epsi: 0.42 dv: 1.43 th:301 diff: 0.97 vvmax:  237 Mag:-3.5[ 0.03] xc: 184 yc:  49 DF: 99 S: 13
+21:08:05.993 Lock ON0:171 Epsi: 0.33 dv: 1.04 th:296 diff: 0.83 vvmax:  229 Mag:-3.5[ 0.03] xc: 182 yc:  49 DF:101 S: 11
+21:08:06.008 Lock ON0:172 Epsi: 0.59 dv: 1.34 th:293 diff: 1.51 vvmax:  226 Mag:-3.6[ 0.01] xc: 180 yc:  51 DF:100 S: 12
+21:08:06.024 Lock ON0:173 Epsi: 0.28 dv: 1.86 th:295 diff: 0.81 vvmax:  228 Mag:-3.6[ 0.01] xc: 179 yc:  51 DF: 98 S: 12
+21:08:06.055 Lock ON0:174 Epsi: 0.53 dv: 1.53 th:300 diff: 1.44 vvmax:  230 Mag:-3.5[ 0.03] xc: 178 yc:  52 DF: 99 S: 13
+21:08:06.086 Lock ON0:175 Epsi: 0.29 dv: 0.77 th:303 diff: 1.68 vvmax:  225 Mag:-3.6[ 0.01] xc: 178 yc:  52 DF:101 S: 10
+21:08:06.118 Lock ON0:176 Epsi: 0.07 dv: 0.38 th:304 diff: 0.75 vvmax:  225 Mag:-3.6[ 0.01] xc: 178 yc:  52 DF:100 S: 12
+21:08:06.149 Lock ON0:177 Epsi: 0.09 dv: 0.39 th:285 diff: 0.40 vvmax:  228 Mag:-3.6[ 0.02] xc: 177 yc:  52 DF: 98 S: 13
+21:08:06.180 Lock ON0:178 Epsi: 0.11 dv: 0.38 th:287 diff: 0.12 vvmax:  224 Mag:-3.6[-0.00] xc: 177 yc:  52 DF:102 S: 12
+21:08:06.211 Lock ON0:179 Epsi: 0.12 dv: 0.36 th:291 diff: 0.21 vvmax:  228 Mag:-3.6[ 0.01] xc: 177 yc:  52 DF:101 S: 13
+21:08:06.243 Lock ON0:180 Epsi: 0.06 dv: 0.34 th:306 diff: 0.08 vvmax:  225 Mag:-3.6[ 0.02] xc: 176 yc:  53 DF:100 S: 13
+21:08:06.290 Lock ON0:181 Epsi: 0.14 dv: 0.50 th:309 diff: 0.52 vvmax:  235 Mag:-3.5[ 0.04] xc: 176 yc:  53 DF: 98 S: 22
+21:08:06.321 Lock ON0:182 Epsi: 0.17 dv: 0.49 th:296 diff: 0.49 vvmax:  224 Mag:-3.5[ 0.04] xc: 175 yc:  53 DF: 99 S: 14
+21:08:06.352 Lock ON0:183 Epsi: 0.17 dv: 0.43 th:285 diff: 0.27 vvmax:  226 Mag:-3.6[ 0.01] xc: 175 yc:  53 DF:101 S: 12
+21:08:06.399 Lock ON0:184 Epsi: 0.16 dv: 0.30 th:278 diff: 0.35 vvmax:  223 Mag:-3.6[ 0.00] xc: 175 yc:  53 DF:100 S: 11
+21:08:06.415 Lock ON0:185 Epsi: 0.10 dv: 0.38 th:318 diff: 0.55 vvmax:  231 Mag:-3.5[ 0.05] xc: 175 yc:  54 DF:100 S: 13
+21:08:06.446 Lock ON0:186 Epsi: 0.11 dv: 0.42 th:314 diff: 0.24 vvmax:  225 Mag:-3.6[ 0.00] xc: 174 yc:  54 DF:101 S: 11
+21:08:06.477 Lock ON0:187 Epsi: 0.23 dv: 0.41 th:277 diff: 0.82 vvmax:  229 Mag:-3.6[ 0.01] xc: 174 yc:  54 DF:101 S: 12
+21:08:06.524 Lock ON0:188 Epsi: 0.20 dv: 0.37 th:276 diff: 0.36 vvmax:  226 Mag:-3.5[ 0.03] xc: 174 yc:  54 DF:100 S: 13
+21:08:06.555 Lock ON0:189 Epsi: 0.20 dv: 0.38 th:296 diff: 0.35 vvmax:  223 Mag:-3.6[ 0.01] xc: 173 yc:  54 DF: 98 S: 13
+21:08:06.586 Lock ON0:190 Epsi: 0.13 dv: 0.47 th:308 diff: 0.14 vvmax:  232 Mag:-3.6[ 0.01] xc: 173 yc:  54 DF: 99 S: 12
+21:08:06.618 Lock ON0:191 Epsi: 0.09 dv: 0.43 th:302 diff: 0.14 vvmax:  228 Mag:-3.5[ 0.03] xc: 172 yc:  55 DF: 97 S: 11
+21:08:06.649 Lock ON0:192 Epsi: 0.11 dv: 0.43 th:294 diff: 0.30 vvmax:  225 Mag:-3.6[ 0.01] xc: 172 yc:  55 DF: 98 S: 12
+21:08:06.680 Lock ON0:193 Epsi: 0.14 dv: 0.42 th:302 diff: 0.22 vvmax:  226 Mag:-3.6[ 0.01] xc: 172 yc:  55 DF:100 S: 12
+21:08:06.711 Lock ON0:194 Epsi: 0.16 dv: 0.36 th:285 diff: 0.36 vvmax:  222 Mag:-3.5[ 0.02] xc: 171 yc:  55 DF: 99 S: 14
+21:08:06.758 Lock ON0:195 Epsi: 0.14 dv: 0.35 th:309 diff: 0.37 vvmax:  224 Mag:-3.6[ 0.02] xc: 171 yc:  56 DF: 98 S: 11
+21:08:06.790 Lock ON0:196 Epsi: 0.13 dv: 0.36 th:304 diff: 0.01 vvmax:  222 Mag:-3.6[ 0.02] xc: 171 yc:  56 DF:100 S: 12
+21:08:06.821 Lock ON0:197 Epsi: 0.09 dv: 0.39 th:314 diff: 0.02 vvmax:  228 Mag:-3.5[ 0.03] xc: 170 yc:  56 DF: 99 S: 12
+21:08:06.852 Lock ON0:198 Epsi: 0.06 dv: 0.36 th:295 diff: 0.29 vvmax:  224 Mag:-3.6[ 0.00] xc: 170 yc:  56 DF:101 S: 12
+21:08:06.883 Lock ON0:199 Epsi: 0.07 dv: 0.39 th:282 diff: 0.25 vvmax:  228 Mag:-3.6[ 0.01] xc: 170 yc:  56 DF: 98 S: 14
+21:08:06.915 Lock ON0:200 Epsi: 0.10 dv: 0.36 th:288 diff: 0.27 vvmax:  223 Mag:-3.5[ 0.03] xc: 169 yc:  56 DF: 99 S: 14
+21:08:06.946 Lock ON0:201 Epsi: 0.09 dv: 0.32 th:287 diff: 0.12 vvmax:  218 Mag:-3.6[ 0.02] xc: 169 yc:  56 DF:101 S: 11
+21:08:06.977 Lock ON0:202 Epsi: 0.12 dv: 0.41 th:300 diff: 0.37 vvmax:  224 Mag:-3.6[ 0.02] xc: 169 yc:  57 DF: 97 S: 11
+21:08:07.024 Lock ON0:203 Epsi: 0.10 dv: 0.46 th:296 diff: 0.08 vvmax:  230 Mag:-3.5[ 0.04] xc: 168 yc:  57 DF: 98 S: 13
+21:08:07.055 Lock ON0:204 Epsi: 0.09 dv: 0.45 th:307 diff: 0.19 vvmax:  219 Mag:-3.6[ 0.01] xc: 168 yc:  57 DF:101 S: 13
+21:08:07.086 Lock ON0:205 Epsi: 0.05 dv: 0.37 th:295 diff: 0.25 vvmax:  228 Mag:-3.6[ 0.01] xc: 168 yc:  57 DF: 99 S: 12
+21:08:07.118 Lock ON0:206 Epsi: 0.06 dv: 0.35 th:300 diff: 0.14 vvmax:  228 Mag:-3.5[ 0.04] xc: 167 yc:  57 DF: 98 S: 12
+21:08:07.149 Lock ON0:207 Epsi: 0.10 dv: 0.40 th:310 diff: 0.28 vvmax:  230 Mag:-3.6[ 0.01] xc: 167 yc:  58 DF: 98 S: 11
+21:08:07.180 Lock ON0:208 Epsi: 0.07 dv: 0.40 th:315 diff: 0.08 vvmax:  225 Mag:-3.6[ 0.01] xc: 167 yc:  58 DF:100 S: 13
+21:08:07.211 Lock ON0:209 Epsi: 0.09 dv: 0.37 th:299 diff: 0.30 vvmax:  224 Mag:-3.5[ 0.04] xc: 166 yc:  58 DF:100 S: 12
+21:08:07.258 Lock ON0:210 Epsi: 0.02 dv: 0.33 th:280 diff: 0.24 vvmax:  228 Mag:-3.6[ 0.02] xc: 166 yc:  58 DF: 98 S: 12
+21:08:07.290 Saturation:  2  Epsi: 0.10 dv: 0.29 th:299 diff: 0.39 vvmax:  223 Mag:-3.6 xc: 166 yc:  58 DF:100 S: 12
+21:08:07.321 Lock ON0:211 Epsi: 0.16 dv: 0.39 th:333 diff: 0.60 vvmax:  231 Mag:-3.5[ 0.03] xc: 166 yc:  59 DF: 98 S: 17
+21:08:07.352 Lock ON0:212 Epsi: 0.38 dv: 0.93 th:336 diff: 1.62 vvmax:  227 Mag:-3.2[ 0.12] xc: 165 yc:  61 DF:101 S: 18
+21:08:07.383 Saturation:  3  Epsi: 0.68 dv: 0.51 th:308 diff: 2.25 vvmax:  225 Mag:-3.6 xc: 165 yc:  59 DF: 98 S: 13
+21:08:07.415 Lock ON0:213 Epsi: 0.62 dv: 0.47 th:242 diff: 1.15 vvmax:  223 Mag:-3.5[ 0.05] xc: 164 yc:  59 DF:101 S: 14
+21:08:07.446 Lock ON0:214 Epsi: 0.52 dv: 0.54 th:213 diff: 0.34 vvmax:  221 Mag:-3.5[ 0.03] xc: 164 yc:  59 DF: 99 S: 12
+21:08:07.477 Lock ON0:215 Epsi: 0.13 dv: 0.44 th:299 diff: 1.27 vvmax:  220 Mag:-3.6[ 0.00] xc: 164 yc:  59 DF:100 S: 11
+21:08:07.524 Lock ON0:216 Epsi: 0.07 dv: 0.38 th:321 diff: 0.35 vvmax:  223 Mag:-3.5[ 0.04] xc: 164 yc:  60 DF: 98 S: 11
+21:08:07.555 Lock ON0:217 Epsi: 0.09 dv: 0.32 th:314 diff: 0.22 vvmax:  220 Mag:-3.5[ 0.03] xc: 163 yc:  60 DF: 99 S: 13
+21:08:07.586 Lock ON0:218 Epsi: 0.08 dv: 0.35 th:299 diff: 0.24 vvmax:  225 Mag:-3.5[ 0.02] xc: 163 yc:  60 DF: 98 S: 12
+21:08:07.618 Lock ON0:219 Epsi: 0.06 dv: 0.38 th:299 diff: 0.09 vvmax:  218 Mag:-3.5[ 0.04] xc: 163 yc:  60 DF:100 S: 13
+21:08:07.649 Lock ON0:220 Epsi: 0.07 dv: 0.38 th:297 diff: 0.13 vvmax:  222 Mag:-3.5[ 0.03] xc: 162 yc:  60 DF: 98 S: 12
+21:08:07.680 Lock ON0:221 Epsi: 0.07 dv: 0.36 th:287 diff: 0.17 vvmax:  216 Mag:-3.5[ 0.02] xc: 162 yc:  60 DF:100 S: 11
+21:08:07.711 Lock ON0:222 Epsi: 0.18 dv: 0.50 th:303 diff: 0.65 vvmax:  228 Mag:-3.5[ 0.03] xc: 161 yc:  61 DF: 97 S: 14
+21:08:07.758 Lock ON0:223 Epsi: 0.18 dv: 0.43 th:312 diff: 0.37 vvmax:  221 Mag:-3.5[ 0.04] xc: 161 yc:  61 DF: 99 S: 12
+21:08:07.790 Lock ON0:224 Epsi: 0.22 dv: 0.31 th:303 diff: 0.48 vvmax:  225 Mag:-3.5[ 0.02] xc: 161 yc:  61 DF: 98 S: 11
+21:08:07.836 Failure:  1  Epsi: 0.16 dv: 0.26 th:287 diff: 0.14 vvmax:  226 Mag:-3.5 xc: 161 yc:  61 sn:  0.0 sig3:226 sig3s: 40
+21:08:07.852 Failure:  2  Epsi: 0.16 dv: 0.25 th:295 diff: 0.07 vvmax:  220 Mag:-3.5 xc: 161 yc:  61 sn:  0.0 sig3:222 sig3s: 41
+21:08:07.883 Lock ON0:225 Epsi: 0.11 dv: 0.37 th:308 diff: 0.31 vvmax:  220 Mag:-3.5[ 0.02] xc: 160 yc:  62 DF: 98 S: 11
+21:08:07.915 Lock ON0:226 Epsi: 0.13 dv: 0.38 th:304 diff: 0.32 vvmax:  226 Mag:-3.5[ 0.01] xc: 160 yc:  62 DF: 98 S: 10
+21:08:07.946 Lock ON0:227 Epsi: 0.10 dv: 0.35 th:293 diff: 0.09 vvmax:  216 Mag:-3.5[ 0.04] xc: 160 yc:  62 DF: 98 S: 13
+21:08:07.993 Lock ON0:228 Epsi: 0.09 dv: 0.35 th:288 diff: 0.06 vvmax:  217 Mag:-3.5[ 0.03] xc: 159 yc:  62 DF: 97 S: 11
+21:08:08.024 Lock ON0:229 Epsi: 0.05 dv: 0.41 th:304 diff: 0.25 vvmax:  228 Mag:-3.6[ 0.02] xc: 159 yc:  62 DF: 97 S: 12
+21:08:08.055 Lock ON0:230 Epsi: 0.11 dv: 0.32 th:306 diff: 0.33 vvmax:  207 Mag:-3.5[ 0.03] xc: 159 yc:  62 DF:103 S: 12
+21:08:08.086 Lock ON0:231 Epsi: 0.10 dv: 0.33 th:312 diff: 0.16 vvmax:  219 Mag:-3.5[ 0.03] xc: 158 yc:  63 DF:100 S: 11
+21:08:08.118 Lock ON0:232 Epsi: 0.12 dv: 0.36 th:295 diff: 0.30 vvmax:  209 Mag:-3.6[ 0.01] xc: 158 yc:  63 DF:102 S: 12
+21:08:08.149 Lock ON0:233 Epsi: 0.07 dv: 0.44 th:293 diff: 0.07 vvmax:  206 Mag:-3.5[ 0.03] xc: 158 yc:  63 DF:101 S: 12
+21:08:08.180 Lock ON0:234 Epsi: 0.09 dv: 0.32 th:299 diff: 0.33 vvmax:  211 Mag:-3.4[ 0.06] xc: 157 yc:  63 DF:102 S: 15
+21:08:08.211 Lock ON0:235 Epsi: 0.06 dv: 0.35 th:320 diff: 0.28 vvmax:  214 Mag:-3.5[ 0.04] xc: 157 yc:  64 DF:100 S: 10
+21:08:08.258 Lock ON0:236 Epsi: 0.12 dv: 0.31 th:303 diff: 0.39 vvmax:  209 Mag:-3.5[ 0.03] xc: 157 yc:  63 DF:102 S: 11
+21:08:08.290 Lock ON0:237 Epsi: 0.11 dv: 0.37 th:300 diff: 0.18 vvmax:  212 Mag:-3.4[ 0.06] xc: 157 yc:  64 DF:101 S: 13
+21:08:08.321 Lock ON0:238 Epsi: 0.28 dv: 0.45 th:331 diff: 0.86 vvmax:  215 Mag:-3.4[ 0.08] xc: 157 yc:  65 DF:102 S: 19
+21:08:08.352 Lock ON0:239 Epsi: 0.34 dv: 0.39 th:313 diff: 0.95 vvmax:  207 Mag:-3.5[ 0.03] xc: 156 yc:  64 DF:103 S: 12
+21:08:08.383 Lock ON0:240 Epsi: 0.31 dv: 0.33 th:278 diff: 0.43 vvmax:  206 Mag:-3.5[ 0.02] xc: 156 yc:  64 DF:104 S: 12
+21:08:08.415 Lock ON0:241 Epsi: 0.33 dv: 0.40 th:275 diff: 0.44 vvmax:  205 Mag:-3.5[ 0.05] xc: 155 yc:  65 DF:104 S: 11
+21:08:08.446 Lock ON0:242 Epsi: 0.19 dv: 0.32 th:297 diff: 0.25 vvmax:  203 Mag:-3.5[ 0.04] xc: 155 yc:  64 DF:105 S: 13
+21:08:08.493 Lock ON0:243 Epsi: 0.19 dv: 0.32 th:295 diff: 0.15 vvmax:  203 Mag:-3.5[ 0.03] xc: 155 yc:  65 DF:104 S: 12
+21:08:08.524 Lock ON0:244 Epsi: 0.17 dv: 0.31 th:290 diff: 0.06 vvmax:  208 Mag:-3.4[ 0.05] xc: 154 yc:  65 DF:106 S: 14
+21:08:08.555 Lock ON0:245 Epsi: 0.08 dv: 0.41 th:314 diff: 0.26 vvmax:  203 Mag:-3.5[ 0.04] xc: 154 yc:  65 DF:105 S: 12
+21:08:08.586 Lock ON0:246 Epsi: 0.06 dv: 0.35 th:309 diff: 0.12 vvmax:  201 Mag:-3.5[ 0.04] xc: 154 yc:  66 DF:105 S: 10
+21:08:08.618 Lock ON0:247 Epsi: 0.13 dv: 0.30 th:295 diff: 0.40 vvmax:  211 Mag:-3.5[ 0.03] xc: 154 yc:  65 DF:106 S: 12
+21:08:08.649 Lock ON0:248 Epsi: 0.13 dv: 0.32 th:297 diff: 0.24 vvmax:  208 Mag:-3.5[ 0.05] xc: 153 yc:  66 DF:105 S: 13
+21:08:08.680 Lock ON0:249 Epsi: 0.13 dv: 0.33 th:295 diff: 0.04 vvmax:  207 Mag:-3.5[ 0.03] xc: 153 yc:  66 DF:103 S: 12
+21:08:08.727 Lock ON0:250 Epsi: 0.10 dv: 0.33 th:307 diff: 0.07 vvmax:  200 Mag:-3.5[ 0.03] xc: 153 yc:  66 DF:102 S: 12
+21:08:08.758 Lock ON0:251 Epsi: 0.05 dv: 0.32 th:283 diff: 0.27 vvmax:  207 Mag:-3.4[ 0.06] xc: 152 yc:  66 DF:101 S: 13
+21:08:08.790 Lock ON0:252 Epsi: 0.10 dv: 0.36 th:306 diff: 0.42 vvmax:  211 Mag:-3.6[ 0.01] xc: 152 yc:  67 DF:101 S: 14
+21:08:08.821 Lock ON0:253 Epsi: 0.12 dv: 0.34 th:302 diff: 0.18 vvmax:  209 Mag:-3.5[ 0.02] xc: 152 yc:  66 DF:100 S: 12
+21:08:08.852 Lock ON0:254 Epsi: 0.11 dv: 0.36 th:306 diff: 0.09 vvmax:  212 Mag:-3.5[ 0.04] xc: 152 yc:  67 DF:102 S: 12
+21:08:08.883 Lock ON0:255 Epsi: 0.12 dv: 0.34 th:303 diff: 0.14 vvmax:  208 Mag:-3.4[ 0.06] xc: 151 yc:  67 DF:101 S: 14
+21:08:08.915 Lock ON0:256 Epsi: 0.06 dv: 0.39 th:312 diff: 0.10 vvmax:  211 Mag:-3.5[ 0.03] xc: 151 yc:  67 DF:101 S: 12
+21:08:08.946 Lock ON0:257 Epsi: 0.08 dv: 0.36 th:301 diff: 0.22 vvmax:  212 Mag:-3.5[ 0.03] xc: 151 yc:  67 DF: 99 S: 11
+21:08:08.993 Lock ON0:258 Epsi: 0.09 dv: 0.32 th:284 diff: 0.31 vvmax:  209 Mag:-3.3[ 0.09] xc: 150 yc:  67 DF:100 S: 12
+21:08:09.024 Lock ON0:259 Epsi: 0.09 dv: 0.30 th:293 diff: 0.23 vvmax:  207 Mag:-3.5[ 0.04] xc: 150 yc:  68 DF:100 S: 13
+21:08:09.055 Lock ON0:260 Epsi: 0.10 dv: 0.33 th:312 diff: 0.28 vvmax:  218 Mag:-3.5[ 0.03] xc: 150 yc:  68 DF: 98 S: 11
+21:08:09.086 Lock ON0:261 Epsi: 0.10 dv: 0.35 th:312 diff: 0.13 vvmax:  209 Mag:-3.5[ 0.03] xc: 150 yc:  68 DF:100 S: 11
+21:08:09.118 Lock ON0:262 Epsi: 0.13 dv: 0.36 th:289 diff: 0.43 vvmax:  214 Mag:-3.5[ 0.05] xc: 149 yc:  68 DF: 98 S: 19
+21:08:09.149 Lock ON0:263 Epsi: 0.14 dv: 0.32 th:291 diff: 0.34 vvmax:  206 Mag:-3.5[ 0.04] xc: 149 yc:  68 DF:100 S: 11
+21:08:09.180 Lock ON0:264 Epsi: 0.13 dv: 0.30 th:297 diff: 0.03 vvmax:  213 Mag:-3.5[ 0.04] xc: 149 yc:  68 DF:100 S: 11
+21:08:09.227 Lock ON0:265 Epsi: 0.14 dv: 0.32 th:328 diff: 0.43 vvmax:  216 Mag:-3.5[ 0.04] xc: 149 yc:  69 DF:100 S: 13
+21:08:09.430 Lock ON0:266 Epsi: 0.12 dv: 0.34 th:321 diff: 0.08 vvmax:  212 Mag:-3.5[ 0.05] xc: 148 yc:  69 DF: 99 S: 12
+21:08:09.446 Failure:  1  Epsi: 0.16 dv: 0.28 th:314 diff: 0.33 vvmax:  216 Mag:-3.5 xc: 148 yc:  69 sn:  0.0 sig3:227 sig3s: 46
+21:08:09.461 Lock ON0:267 Epsi: 0.10 dv: 0.41 th:333 diff: 0.33 vvmax:  210 Mag:-3.5[ 0.03] xc: 148 yc:  70 DF:100 S: 17
+21:08:09.477 Lock ON0:268 Epsi: 0.16 dv: 0.35 th:315 diff: 0.56 vvmax:  208 Mag:-3.4[ 0.04] xc: 148 yc:  70 DF:102 S: 12
+21:08:09.493 Lock ON0:269 Epsi: 0.18 dv: 0.38 th:305 diff: 0.33 vvmax:  209 Mag:-3.5[ 0.03] xc: 147 yc:  70 DF: 99 S: 10
+21:08:09.524 Lock ON0:270 Epsi: 0.25 dv: 0.63 th:288 diff: 0.85 vvmax:  209 Mag:-3.5[ 0.05] xc: 146 yc:  70 DF: 98 S: 13
+21:08:09.555 Lock ON0:271 Epsi: 0.16 dv: 0.72 th:295 diff: 0.10 vvmax:  210 Mag:-3.5[ 0.04] xc: 146 yc:  71 DF:100 S: 11
+21:08:09.586 Lock ON0:272 Epsi: 0.20 dv: 0.62 th:294 diff: 0.43 vvmax:  204 Mag:-3.3[ 0.09] xc: 145 yc:  71 DF: 99 S: 10
+21:08:09.618 Lock ON0:273 Epsi: 0.02 dv: 0.37 th:292 diff: 0.44 vvmax:  212 Mag:-3.4[ 0.05] xc: 145 yc:  71 DF: 96 S: 12
+21:08:09.649 Lock ON0:274 Epsi: 0.10 dv: 0.32 th:312 diff: 0.40 vvmax:  218 Mag:-3.5[ 0.04] xc: 145 yc:  71 DF: 98 S: 11
+21:08:09.680 Lock ON0:275 Epsi: 0.07 dv: 0.31 th:322 diff: 0.06 vvmax:  207 Mag:-3.5[ 0.04] xc: 145 yc:  71 DF: 99 S: 12
+21:08:09.727 Lock ON0:276 Epsi: 0.10 dv: 0.30 th:313 diff: 0.24 vvmax:  205 Mag:-3.3[ 0.11] xc: 144 yc:  71 DF:100 S: 11
+21:08:09.758 Lock ON0:277 Epsi: 0.02 dv: 0.34 th:293 diff: 0.20 vvmax:  203 Mag:-3.4[ 0.06] xc: 144 yc:  72 DF:101 S: 12
+21:08:09.790 Lock ON0:278 Epsi: 0.05 dv: 0.30 th:296 diff: 0.16 vvmax:  211 Mag:-3.5[ 0.05] xc: 144 yc:  72 DF:101 S: 10
+21:08:09.821 Failure:  1  Epsi: 0.03 dv: 0.28 th:304 diff: 0.08 vvmax:  206 Mag:-3.5 xc: 144 yc:  72 sn:  0.0 sig3:226 sig3s: 50
+21:08:09.852 Failure:  2  Epsi: 0.05 dv: 0.28 th:312 diff: 0.28 vvmax:  217 Mag:-3.5 xc: 144 yc:  72 sn:  0.0 sig3:223 sig3s: 47
+21:08:09.883 Failure:  3  Epsi: 0.04 dv: 0.29 th:314 diff: 0.48 vvmax:  208 Mag:-3.4 xc: 143 yc:  72 sn:  0.0 sig3:221 sig3s: 53
+21:08:09.915 Failure:  4  Epsi: 0.06 dv: 0.34 th:318 diff:160.57 vvmax:  202 Mag:-3.4 xc: 143 yc:  73 sn:  0.0 sig3:220 sig3s: 53
+21:08:09.961 Failure:  5  Epsi: 0.16 dv: 0.31 th:289 diff:160.04 vvmax:  207 Mag:-3.5 xc: 143 yc:  72 sn:  0.0 sig3:228 sig3s: 50
+21:08:09.993 Failure:  6  Epsi: 0.16 dv: 0.32 th:286 diff:159.97 vvmax:  210 Mag:-3.4 xc: 142 yc:  73 sn:  0.0 sig3:214 sig3s: 52
+Lost!
+21:08:20.071 Lock ON0:  1 Epsi: 0.16 dv: 0.95 th:311 diff: 0.70 vvmax:  152 Mag: 0.5[ 0.41] xc:  88 yc: 120 sn:  0.0 DF: 95 S:  8
+21:08:20.102 Failure:  1  Epsi: 0.90 dv: 0.24 th: 45 diff: 3.36 vvmax:  138 Mag:-1.9 xc:  90 yc: 119 sn:  0.0 sig3:105 sig3s: 57
+21:08:20.133 Failure:  2  Epsi: 1.13 dv: 0.53 th:112 diff: 5.75 vvmax:   77 Mag:-3.0 xc:  91 yc: 118 sn:  0.0 sig3:167 sig3s: 57
+21:08:20.165 Failure:  3  Epsi: 1.29 dv: 0.25 th:115 diff: 4.31 vvmax:  153 Mag: 0.5 xc:  88 yc: 120 sn:  0.0 sig3: 61 sig3s: 55
+Lost!
+21:08:20.899 Lock ON0:  1 Epsi: 0.12 dv: 1.15 th:311 diff: 1.77 vvmax:  165 Mag: 0.5[ 0.96] xc:  86 yc: 124 sn:  0.0 DF: 88 S:  8
+21:08:20.930 Failure:  1  Epsi: 1.09 dv: 0.27 th: 68 diff: 4.33 vvmax:  109 Mag:-2.4 xc:  88 yc: 122 sn:  0.0 sig3:127 sig3s: 59
+21:08:20.961 Failure:  2  Epsi: 1.19 dv: 0.49 th:122 diff: 6.41 vvmax:   46 Mag:-3.0 xc:  89 yc: 121 sn:  0.0 sig3:165 sig3s: 59
+21:08:20.993 Failure:  3  Epsi: 1.31 dv: 0.35 th:127 diff: 3.58 vvmax:  173 Mag: 0.5 xc:  86 yc: 123 sn:  0.0 sig3: 65 sig3s: 60
+Lost!
+21:08:24.743 Lock ON0:  1 Epsi: 0.12 dv: 0.85 th:311 diff:117.71 vvmax:  171 Mag: 0.5[ 0.00] xc:  75 yc: 136 sn:  0.0 DF: 90 S:  6
+21:08:24.774 Failure:  1  Epsi: 0.95 dv: 0.30 th: 90 diff: 3.77 vvmax:  118 Mag:-2.6 xc:  78 yc: 134 sn:  0.0 sig3:139 sig3s: 66
+21:08:24.805 Failure:  2  Epsi: 1.15 dv: 0.70 th:120 diff: 6.11 vvmax:   46 Mag:-3.1 xc:  79 yc: 133 sn:  0.0 sig3:171 sig3s: 64
+21:08:24.836 Failure:  3  Epsi: 1.04 dv: 0.89 th:128 diff: 2.38 vvmax:  198 Mag:-2.5 xc:  77 yc: 134 sn:  0.0 sig3:147 sig3s: 61
+Lost!
+21:42:37.576 Lock ON0:  1 Epsi: 0.15 dv: 3.95 th: 23 diff:153.78 vvmax:   25 Mag: 0.5[-0.01] xc: 144 yc: 344 sn:  0.0 DF:100 S: 15
+21:42:37.608 Failure:  1  Epsi: 5.09 dv: 9.69 th: 47 diff:20.74 vvmax:   11 Mag: 0.5 xc: 164 yc: 358 sn:  0.0 sig3: 31 sig3s: 32
+21:42:37.639 Failure:  2  Epsi:16.19 dv:23.43 th:315 diff:86.81 vvmax:   19 Mag: 0.5 xc:  76 yc: 401 sn:  0.0 sig3:  0 sig3s:  0
+21:42:37.670 Failure:  3  Epsi:105.29 dv:71.82 th:210 diff:444.07 vvmax:-1000 Mag: 0.5 xc:  -0 yc:  -0 sn:  0.0 sig3:  0 sig3s:  0
+Lost!
+21:45:15.373 Lock ON0:  1 Epsi: 0.18 dv: 0.88 th:265 diff: 4.90 vvmax:  221 Mag:-3.1[-0.86] xc: 158 yc: 341 sn:  0.0 DF:100 S:  5
+21:45:15.405 Lock ON0:  2 Epsi: 0.23 dv: 0.92 th:260 diff: 0.45 vvmax:  216 Mag:-3.2[-0.88] xc: 157 yc: 341 DF: 99 S:  6
+21:45:15.514 Lock ON0:  3 Epsi: 0.12 dv: 0.89 th:244 diff: 0.50 vvmax:  216 Mag:-3.4[-0.94] xc: 156 yc: 340 DF:100 S:  6
+21:45:15.530 Lock ON0:  4 Epsi: 0.12 dv: 0.99 th:246 diff: 0.31 vvmax:  226 Mag:-3.5[-0.97] xc: 155 yc: 340 DF:100 S:  6
+21:45:15.545 Lock ON0:  5 Epsi: 0.12 dv: 0.95 th:249 diff: 0.24 vvmax:  225 Mag:-3.4[-0.96] xc: 154 yc: 340 DF:100 S:  7
+21:45:15.561 Lock ON0:  6 Epsi: 0.12 dv: 0.95 th:248 diff: 0.19 vvmax:  231 Mag:-3.4[-0.95] xc: 153 yc: 339 DF:102 S:  6
+21:45:15.592 Lock ON0:  7 Epsi: 0.12 dv: 0.97 th:248 diff: 0.15 vvmax:  231 Mag:-3.4[-0.96] xc: 152 yc: 339 DF:100 S:  7
+21:45:15.608 Lock ON0:  8 Epsi: 0.09 dv: 1.04 th:255 diff: 0.30 vvmax:  235 Mag:-3.3[-0.91] xc: 151 yc: 339 DF: 97 S:  7
+21:45:15.639 Lock ON0:  9 Epsi: 0.08 dv: 1.00 th:255 diff: 0.13 vvmax:  224 Mag:-3.4[-0.95] xc: 151 yc: 338 DF:102 S:  7
+21:45:15.686 Lock ON0: 10 Epsi: 0.06 dv: 1.03 th:250 diff: 0.24 vvmax:  224 Mag:-3.6[-0.99] xc: 150 yc: 338 DF:100 S:  7
+21:45:15.701 Lock ON0: 11 Epsi: 0.03 dv: 1.00 th:245 diff: 0.17 vvmax:  228 Mag:-3.5[-0.98] xc: 149 yc: 337 DF:101 S:  9
+21:45:15.733 Lock ON0: 12 Epsi: 0.06 dv: 0.91 th:246 diff: 0.26 vvmax:  225 Mag:-3.7[-1.03] xc: 148 yc: 337 DF:103 S:  8
+21:45:15.780 Lock ON0: 13 Epsi: 0.06 dv: 0.89 th:248 diff: 0.13 vvmax:  232 Mag:-3.5[-0.97] xc: 147 yc: 337 DF: 98 S:  7
+21:45:15.811 Lock ON0: 14 Epsi: 0.10 dv: 0.98 th:248 diff: 0.28 vvmax:  209 Mag:-3.2[-0.90] xc: 146 yc: 336 DF: 98 S:  5
+21:45:15.842 Lock ON0: 15 Epsi: 0.04 dv: 1.09 th:250 diff: 0.23 vvmax:  230 Mag:-3.7[-1.04] xc: 145 yc: 336 DF: 99 S: 11
+21:45:15.873 Lock ON0: 16 Epsi: 0.09 dv: 1.04 th:246 diff: 0.29 vvmax:  229 Mag:-3.2[-0.89] xc: 144 yc: 336 DF: 96 S:  4
+21:45:15.905 Lock ON0: 17 Epsi: 0.08 dv: 0.94 th:246 diff: 0.25 vvmax:  223 Mag:-3.4[-0.95] xc: 143 yc: 335 DF:102 S:  7
+21:45:15.936 Lock ON0: 18 Epsi: 0.10 dv: 0.88 th:249 diff: 0.26 vvmax:  157 Mag:-2.8[-0.78] xc: 142 yc: 335 DF: 96 S:  6
+21:45:15.967 Lock ON0: 19 Epsi: 0.08 dv: 0.94 th:251 diff: 0.19 vvmax:  228 Mag:-3.2[-0.88] xc: 142 yc: 335 DF: 99 S:  5
+21:45:16.014 Lock ON0: 20 Epsi: 0.13 dv: 0.86 th:253 diff: 0.34 vvmax:   79 Mag:-1.9[-0.49] xc: 141 yc: 335 DF: 89 S:  4
+21:45:16.045 Lock ON0: 21 Epsi: 0.13 dv: 0.79 th:256 diff: 0.26 vvmax:   50 Mag:-1.4[-0.34] xc: 140 yc: 334 DF: 91 S:  4
+21:45:16.092 Lock ON0: 22 Epsi: 0.22 dv: 0.89 th:253 diff: 0.58 vvmax:   21 Mag:-0.9[-0.19] xc: 139 yc: 334 DF:108 S:  7
+21:45:16.108 Lock ON0: 23 Epsi: 0.38 dv: 0.75 th:227 diff: 1.29 vvmax:   27 Mag:-0.2[ 0.03] xc: 139 yc: 333 DF:140 S: 13
+21:45:16.139 Lock ON0: 24 Epsi: 0.55 dv: 0.95 th:244 diff: 1.52 vvmax:   15 Mag:-0.0[ 0.06] xc: 137 yc: 333 DF: 70 S: 14
+21:45:16.170 Failure:  1  Epsi: 1.82 dv: 1.98 th:332 diff: 6.84 vvmax:   15 Mag: 0.5 xc: 137 yc: 339 sn:  0.0 sig3: 37 sig3s: 38
+21:45:16.201 Lock ON0: 25 Epsi: 0.50 dv: 0.97 th:253 diff: 0.32 vvmax:   17 Mag: 0.5[ 0.31] xc: 136 yc: 332 DF: 40 S: 23
+21:45:16.248 Failure:  1  Epsi: 0.93 dv: 1.78 th:253 diff: 3.46 vvmax:   17 Mag: 0.5 xc: 132 yc: 331 sn:  0.0 sig3: 35 sig3s: 32
+21:45:16.280 Failure:  2  Epsi: 8.94 dv: 7.91 th:356 diff:43.86 vvmax:   12 Mag: 0.5 xc: 137 yc: 376 sn:  0.0 sig3: 52 sig3s: 48
+21:45:16.311 Failure:  3  Epsi: 8.94 dv: 9.08 th:354 diff:20.64 vvmax:   20 Mag: 0.5 xc: 131 yc: 369 sn:  0.0 sig3: 55 sig3s: 51
+Lost!

@@ -1,0 +1,8 @@
+00:25:42.579 Lock ON0:  1 Epsi: 0.17 dv: 1.78 th:211 diff: 0.27 vvmax:  150 Mag:-2.5[-0.30] xc: 234 yc:  64 sn:  0.0 DF:105 S:  3
+00:25:42.610 Lock ON0:  2 Epsi: 0.16 dv: 1.87 th:210 diff: 0.23 vvmax:  102 Mag:-2.0[-0.17] xc: 233 yc:  62 DF:102 S:  3
+00:25:42.642 Lock ON0:  3 Epsi: 0.19 dv: 1.89 th:216 diff: 0.56 vvmax:   91 Mag:-1.5[-0.02] xc: 231 yc:  61 DF: 88 S:  3
+00:25:42.673 Lock ON0:  4 Epsi: 0.51 dv: 2.52 th:216 diff: 1.92 vvmax:   18 Mag: 0.5[ 0.58] xc: 229 yc:  58 DF:100 S:  6
+00:25:42.720 Failure:  1  Epsi:41.60 dv:52.58 th:206 diff:166.43 vvmax:   12 Mag: 0.5 xc: 156 yc: -94 sn:  0.0 sig3:  0 sig3s:  2
+00:25:42.735 Failure:  2  Epsi: 0.95 dv: 3.93 th:212 diff: 5.17 vvmax:    9 Mag: 0.5 xc: 225 yc:  49 sn:  0.0 sig3:  9 sig3s:  7
+00:25:42.782 Failure:  3  Epsi: 1.69 dv: 5.25 th:222 diff: 5.92 vvmax:   14 Mag: 0.5 xc: 216 yc:  45 sn:  0.0 sig3:  9 sig3s:  9
+Lost!

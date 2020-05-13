@@ -532,6 +532,13 @@ class GUI:
  
     # 前回選択結果を反映
     def check_flg1_state(self):
+        fn = bmp2avi_lib.get_fn_small_image(self.cvv.fn, self.cvv.xc_list_id)
+        if fn == '':
+            return
+        elif fn[-5] == '0' or fn[-5] == '1' or fn[-5] == '2':
+            self.flg1.set(fn[-5])
+        return
+
         small_img_dir='C:/Users/root/Documents/Python Scripts/gym/tmp'
         basefn = os.path.basename(self.cvv.fn)
         outfilename_non   = small_img_dir+'/'+basefn.replace(".avi","s.png")
@@ -566,6 +573,7 @@ class GUI:
             print('cb01')
             self.cvv.cap.release()
             self.cvv.cap2.release()
+            self.cvv.flg1_list[self.cvv.xc_list_id] = int( self.flg1.get() )
             bmp2avi_lib.make_small_image(self.cvv.fn)
             self.rename_imgdata()
             # Meteor以外は、move file
@@ -597,7 +605,8 @@ class GUI:
             #print(self.cvv.imgfn)
             self.cvv.openFile()
             self.button2.configure(text='Next Detect: '+str(self.cvv.detect_frame_list[self.cvv.xc_list_id])+' ' +str(self.cvv.xc_list_id +1)+'/'+str(len(self.cvv.xc_list)))
-            self.check_flg1_state()      
+            self.check_flg1_state()
+            self.change_radio_button_bgcolor()     
             #self.next_file_flg = True
             #print(self.flg1.get())
             print('cb03')
@@ -616,6 +625,10 @@ class GUI:
         self.time_ms = self.cvv.count_num * self.time_ms_step
         self.label_count.configure(text=str(self.cvv.idx)+":"+  "{:3d}".format(self.cvv.frame_ID))
         self.pb.configure(value=self.cvv.frame_ID)
+        if self.cvv.frame_ID == self.cvv.detect_frame_list[self.cvv.xc_list_id]:
+            self.button2.configure(bg='red')
+        else:
+            self.button2.configure(bg='gray90')
 
         #cam0
         if self.time_ms >= self.cvv.frame_ID * self.cam0_fr_interval :
@@ -687,6 +700,9 @@ class GUI:
         self.button2.configure(text='Next Detect: '+str(self.cvv.detect_frame_list[self.cvv.xc_list_id])+' ' +str(self.cvv.xc_list_id +1)+'/'+str(len(self.cvv.xc_list)))
         self.cvv.imgfn = bmp2avi_lib.get_fn_small_image(self.cvv.fn, self.cvv.xc_list_id)
         self.cvv.openFile()
+        self.check_flg1_state()
+        self.change_radio_button_bgcolor()     
+      
 
     #初期設定
     def firstFrame(self):

@@ -1,0 +1,37 @@
+01:12:49.765 Lock ON0:  1 Epsi: 0.12 dv: 1.08 th:298 diff:221.83 vvmax:  209 Mag:-3.0[-0.18] xc: 132 yc: 323 sn:  0.0 DF:100 S:  3
+01:12:49.796 Lock ON0:  2 Epsi: 0.09 dv: 1.18 th:299 diff: 0.19 vvmax:  210 Mag:-3.2[-0.24] xc: 131 yc: 324 DF:100 S:  4
+01:12:49.843 Lock ON0:  3 Epsi: 0.04 dv: 1.14 th:301 diff: 0.06 vvmax:  211 Mag:-3.1[-0.23] xc: 130 yc: 324 DF:101 S:  5
+01:12:49.874 Lock ON0:  4 Epsi: 0.07 dv: 1.17 th:298 diff: 0.23 vvmax:  235 Mag:-3.3[-0.29] xc: 129 yc: 325 DF:101 S:  5
+01:12:49.905 Lock ON0:  5 Epsi: 0.06 dv: 1.13 th:296 diff: 0.18 vvmax:  238 Mag:-3.4[-0.31] xc: 128 yc: 325 DF: 98 S:  7
+01:12:49.937 Lock ON0:  6 Epsi: 0.25 dv: 1.25 th:309 diff: 0.94 vvmax:   47 Mag:-0.8[ 0.48] xc: 127 yc: 327 DF:109 S:  2
+01:12:49.968 Lock ON0:  7 Epsi: 0.85 dv: 1.46 th:357 diff: 3.44 vvmax:   18 Mag: 0.5[ 0.86] xc: 129 yc: 329 DF:-200 S: 12
+01:12:49.999 Failure:  1  Epsi: 1.46 dv: 0.38 th:354 diff: 4.44 vvmax:   16 Mag: 0.5 xc: 128 yc: 326 sn:  0.0 sig3: 23 sig3s: 19
+01:12:50.030 Failure:  2  Epsi: 5.55 dv: 5.95 th:154 diff:28.75 vvmax:   16 Mag: 0.5 xc: 138 yc: 304 sn:  0.0 sig3: 13 sig3s: 12
+01:12:50.077 Failure:  3  Epsi: 3.27 dv: 9.19 th:157 diff: 4.94 vvmax:   17 Mag: 0.5 xc: 141 yc: 297 sn:  0.0 sig3: 13 sig3s: 11
+Lost!
+01:51:26.353 Lock ON0:  1 Epsi: 0.19 dv: 1.61 th:298 diff: 0.44 vvmax:   86 Mag:-2.0[-0.35] xc: 221 yc: 158 sn:  0.0 DF:100 S:  5
+01:51:26.384 Lock ON0:  2 Epsi: 0.22 dv: 1.52 th:298 diff: 0.39 vvmax:   74 Mag:-2.1[-0.37] xc: 220 yc: 159 DF:100 S:  4
+01:51:26.431 Lock ON0:  3 Epsi: 0.09 dv: 1.47 th:292 diff: 0.14 vvmax:   79 Mag:-2.0[-0.36] xc: 218 yc: 160 DF:100 S:  4
+01:51:26.462 Lock ON0:  4 Epsi: 0.14 dv: 1.47 th:289 diff: 0.36 vvmax:   83 Mag:-2.0[-0.35] xc: 217 yc: 160 DF:100 S:  3
+01:51:26.493 Lock ON0:  5 Epsi: 0.15 dv: 1.52 th:291 diff: 0.30 vvmax:   92 Mag:-2.1[-0.37] xc: 216 yc: 161 DF: 95 S:  5
+01:51:26.525 Lock ON0:  6 Epsi: 0.15 dv: 1.46 th:289 diff: 0.22 vvmax:   73 Mag:-2.0[-0.36] xc: 214 yc: 161 DF:100 S:  4
+01:51:26.556 Lock ON0:  7 Epsi: 0.15 dv: 1.55 th:293 diff: 0.34 vvmax:   75 Mag:-1.9[-0.31] xc: 213 yc: 162 DF:100 S:  4
+01:51:26.587 Lock ON0:  8 Epsi: 0.12 dv: 1.65 th:290 diff: 0.28 vvmax:   83 Mag:-2.3[-0.43] xc: 211 yc: 162 DF:102 S:  5
+01:51:26.618 Lock ON0:  9 Epsi: 0.18 dv: 1.57 th:290 diff: 0.46 vvmax:  174 Mag:-2.8[-0.58] xc: 210 yc: 163 DF:100 S:  4
+01:51:26.665 Lock ON0: 10 Epsi: 0.12 dv: 1.41 th:290 diff: 0.31 vvmax:   73 Mag:-2.0[-0.34] xc: 209 yc: 163 DF:105 S:  5
+01:51:26.696 Lock ON0: 11 Epsi: 0.18 dv: 1.48 th:290 diff: 0.41 vvmax:   59 Mag:-1.8[-0.28] xc: 207 yc: 164 DF:114 S:  4
+01:51:26.728 Lock ON0: 12 Epsi: 0.22 dv: 1.54 th:300 diff: 0.82 vvmax:   55 Mag:-1.5[-0.20] xc: 206 yc: 165 DF:104 S:  4
+01:51:26.759 Lock ON0: 13 Epsi: 0.26 dv: 1.49 th:298 diff: 0.40 vvmax:   49 Mag:-1.7[-0.25] xc: 204 yc: 165 DF:100 S:  5
+01:51:26.790 Lock ON0: 14 Epsi: 0.32 dv: 1.55 th:294 diff: 0.60 vvmax:   41 Mag:-1.4[-0.16] xc: 203 yc: 166 DF:110 S:  6
+01:51:26.821 Lock ON0: 15 Epsi: 0.13 dv: 1.80 th:287 diff: 0.52 vvmax:   33 Mag:-1.2[-0.11] xc: 201 yc: 166 DF:100 S:  4
+01:51:26.853 Lock ON0: 16 Epsi: 0.18 dv: 1.69 th:289 diff: 0.50 vvmax:   27 Mag:-1.0[-0.04] xc: 200 yc: 167 DF:115 S:  5
+01:51:26.884 Lock ON0: 17 Epsi: 0.19 dv: 1.74 th:290 diff: 0.42 vvmax:   25 Mag:-0.8[ 0.00] xc: 198 yc: 168 DF:100 S:  7
+01:51:26.931 Lock ON0: 18 Epsi: 0.34 dv: 1.77 th:299 diff: 0.95 vvmax:   20 Mag:-0.4[ 0.14] xc: 197 yc: 169 DF:133 S:  2
+01:51:26.962 Failure:  1  Epsi: 0.87 dv: 1.02 th:301 diff: 2.84 vvmax:   19 Mag:-0.2 xc: 197 yc: 168 sn:  0.0 sig3: 10 sig3s:  1
+01:51:26.993 Lock ON0: 19 Epsi: 0.50 dv: 1.42 th:300 diff: 1.61 vvmax:   10 Mag: 0.5[ 0.37] xc: 195 yc: 170 DF:200 S: 22
+01:51:27.025 Lock ON0: 20 Epsi: 0.55 dv: 1.07 th:285 diff: 1.85 vvmax:   13 Mag: 0.4[ 0.25] xc: 193 yc: 169 DF:133 S: 26
+01:51:27.056 Lock ON0: 21 Epsi: 0.69 dv: 0.75 th:292 diff: 1.99 vvmax:   14 Mag: 0.5[ 0.25] xc: 194 yc: 171 DF:  0 S: 16
+01:51:27.087 Failure:  1  Epsi: 1.17 dv: 1.51 th:290 diff: 3.12 vvmax:   14 Mag: 0.2 xc: 190 yc: 171 sn:  0.0 sig3:  8 sig3s:  3
+01:51:27.118 Failure:  2  Epsi: 1.27 dv: 1.73 th:272 diff: 4.64 vvmax:    9 Mag: 0.5 xc: 188 yc: 169 sn:  0.0 sig3:  3 sig3s:  0
+01:51:27.150 Failure:  3  Epsi:14.35 dv:13.15 th:272 diff:52.39 vvmax:    7 Mag: 0.5 xc: 131 yc: 172 sn:  0.0 sig3:  9 sig3s: 11
+Lost!

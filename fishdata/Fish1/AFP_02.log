@@ -1,0 +1,5 @@
+02:06:19.366 Lock ON0:  1 Epsi: 0.19 dv: 3.44 th: 45 diff: 3.86 vvmax:   23 Mag: 0.0[-0.16] xc: 440 yc: 452 sn:  0.0 DF:100 S: 48
+02:06:19.413 Failure:  1  Epsi: 1.44 dv: 1.78 th: 35 diff: 5.56 vvmax:   13 Mag: 0.5 xc: 438 yc: 452 sn:  0.0 sig3: 47 sig3s: 43
+02:06:19.444 Failure:  2  Epsi: 1.27 dv: 1.94 th: 64 diff: 6.62 vvmax:   11 Mag: 0.5 xc: 442 yc: 451 sn:  0.0 sig3: 46 sig3s: 42
+02:06:19.475 Failure:  3  Epsi: 0.86 dv: 1.63 th: 69 diff: 3.82 vvmax:   16 Mag: 0.3 xc: 444 yc: 454 sn:  0.0 sig3: 35 sig3s: 37
+Lost!
