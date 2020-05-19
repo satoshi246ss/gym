@@ -29,37 +29,17 @@ def rename_00002_avi(path):
             if not os.path.isfile(dest):
                 os.rename(f, dest)
                 print('rename:'+f +'->'+dest)         
-
-# fn:image file name
-def get_datetime(fn):
-    # fn: '20200503_013619_109_00.avi'
-    # fn: '00002_20200423_200806_965.avi' 特殊構成
-    # dt1 = datetime.datetime(year=2017, month=10, day=10, hour=15)
-    try:
-        st2 = fn.split('_')
-        yy = st2[0][:4]
-        mo = st2[0][4:6]
-        dd = st2[0][-2:]
-        hh = st2[1][:2]
-        mm = st2[1][2:4]
-        ss = st2[1][-2:]
-        msec = st2[2]
-        dt1 = datetime.datetime(int(yy),int(mo),int(dd),int(hh),int(mm),int(ss),int(msec+'000'))
-    except IndexError as e:
-        # BMP fileが壊れている場合
-        print( "IndexError(get_datetime):"+fn )
-        print(e.args)
-        return 
-    except ValueError as e:
-        # BMP fileが壊れている場合
-        print( "ValueError(get_datetime):"+fn+'  yy=',str(yy) )
-        print(e.args)
-        return 
-    return dt1
-    
+   
 def get_all_obs_files(fullfn):
     #fn = os.path.basename(fullfn)
     path = os.path.dirname(fullfn)
+    #file_list = sorted(glob.glob(path+'/*'))
+    file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    return file_list
+
+def get_all_obs_files_dir(path):
+    #fn = os.path.basename(fullfn)
+    #path = os.path.dirname(fullfn)
     #file_list = sorted(glob.glob(path+'/*'))
     file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
     return file_list
@@ -71,26 +51,26 @@ def get_same_obs_files(fullfn):
         
     time_error = 10 #sec 　許容時間誤差
     fn = os.path.basename(fullfn)
-    dt0 = get_datetime(fn)
+    dt0 = bmp2avi_lib.get_datetime(fn)
  
     #path = os.path.dirname(fullfn)
     #file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
-    obs_files=[]
+    same_obs_files=[]
     for f in get_all_obs_files(fullfn):
         fn = os.path.basename(f)
-        dt1 = get_datetime(fn)
+        dt1 = bmp2avi_lib.get_datetime(fn)
         if dt1 >= dt0 :
             td = dt1 -dt0
             if td.seconds <=  time_error :
-                obs_files.append(f)
+                same_obs_files.append(f)
             else:
                 break
         else :
             td = dt0 -dt1
             if td.seconds <=  time_error :
-                obs_files.append(f)
-        #print(f,dt0,dt1,td.seconds)
-    return obs_files
+                same_obs_files.append(f)
+        print(f,dt0,dt1,td.seconds)
+    return same_obs_files
 
 class GUI:
     def __init__(self, targetpath):
@@ -146,27 +126,57 @@ class GUI:
 
         self.afterMSec()
 
-    # select file
+    # select file   in:obs_path
     def select_file(self):
         rename_00002_avi(self.obs_path)
-        self.obs_files = self.get_obs_file()
         #print('選択ファイル名：'+str(self.obs_files))
+        print(self.obs_path)
         avi_files = []
-        for f in get_all_obs_files(self.obsfn):
+        same_files = []
+        all_files = get_all_obs_files_dir(self.obs_path)
+        if len(all_files) == 0 :
+            print('Not obsfile exsit.')
+            return
+        print('all_files:',all_files)
+        for f in all_files :
             if f.endswith("00.avi"):
                 avi_files.append(f) 
+        for f in avi_files :
+            same_files.extend( get_same_obs_files(f) ) # listにlistを追加
+        if len(same_files) == 0 :
+            non_00avi_files = all_files
+        else:
+            non_00avi_files = list( set(all_files) - set(same_files) )
+        print('non_00avi_files:', non_00avi_files)
+        for f in non_00avi_files :
+            bmp2avi_lib.remake_00avi(f)
+
+        avi_files = []
+        all_files = get_all_obs_files_dir(self.obs_path)
+        for f in all_files :
+            if f.endswith("00.avi"):
+                avi_files.append(f) 
+
         #print(avi_files)
+        self.cvv.obsfn = avi_files[0]
+        self.obs_files = get_same_obs_files( avi_files[0] )
+        print('self.obs_path:', self.obs_files)
         self.cvv.set_filelist(avi_files)        
-        self.cvv.set_base_dir( os.path.dirname(self.obsfn) )
-        self.cvv.set_del_dir(self.obsfn[:2]+'/tmp')
+        self.cvv.set_base_dir( os.path.dirname(avi_files[0]) )
+        self.cvv.set_del_dir(avi_files[0][:2]+'/tmp')
         self.cvv.set_idx(0)
 
     def move_del_files(self, flist):
         for f in flist :
             print('move:'+str(f)+'->'+str(self.cvv.del_dir))
+            # tmpにファイルがあれば削除後、移動
+            tf = self.cvv.del_dir +'/' + os.path.basename(f)
+            if os.path.isfile(tf):
+                os.remove(tf)
             shutil.move(f, self.cvv.del_dir)
             if f.endswith("00.avi"):
                 self.cvv.remove_filelist(f)
+                     
 
     def get_flg1(self):
         return self.flg1
@@ -473,7 +483,7 @@ class GUI:
         path_dir = self.cvv.base_dir
         basename = os.path.basename( self.cvv.fn )
         log_file_name = path_dir+'/'+basename.replace(".avi","t.txt")
-        #print(log_file_name, basename)
+        #print('log_file_name:', log_file_name, basename, path_dir)
         if os.path.exists( log_file_name ) :
             with open( log_file_name, "r") as f:
                 strlist = f.readlines()
@@ -626,6 +636,8 @@ class GUI:
         self.time_ms = self.cvv.count_num * self.time_ms_step
         self.label_count.configure(text=str(self.cvv.idx)+":"+  "{:3d}".format(self.cvv.frame_ID))
         self.pb.configure(value=self.cvv.frame_ID)
+        #print(self.cvv.detect_frame_list,self.cvv.xc_list_id)
+        #if len(self.cvv.detect_frame_list) > 0 :
         if self.cvv.frame_ID == self.cvv.detect_frame_list[self.cvv.xc_list_id]:
             self.button2.configure(bg='red')
         else:

@@ -198,7 +198,10 @@ def small_image_concat( img_lighten, img, detect_frame, j, xc, yc, size, filenam
                 img_lighten = vconcat_resize_min([img_lighten, img0] )
                 cv2.imwrite(filename_img, img_lighten)
 
-def bmp2avi(path_dir, target_dir, remake=False, disp=True):
+# path_dir fish data directory
+# target_dir 保存日ディレクトリ
+def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
+    path_dir = fish_dir
     if not os.path.isdir(path_dir):
         print( "Error 1"+path_dir )
         return
@@ -215,17 +218,19 @@ def bmp2avi(path_dir, target_dir, remake=False, disp=True):
     if len(files) == 0:
         print( "Error 3")
         return 
-    if not os.path.isfile(path_dir+files[0]):
-        print( "Error 4")
-        return
-    if not files[0].endswith(".BMP"):
+    bmp_fn_list = []
+    for f in files :
+        if os.path.isfile(path_dir+files[0]):
+            if f.endswith(".BMP"):
+                bmp_fn_list.append(f)
+    if len(bmp_fn_list) == 0:            
         print( "Error 5")
         return
 
     #print( "Check:"+path_dir+"log.txt")
     xc=[]
     yc=[]
-    detect_frame=0
+    detect_frame=[]
     j=0
     lockon_num     = " 0"
     lockon_num_pre = " 0"
@@ -239,10 +244,10 @@ def bmp2avi(path_dir, target_dir, remake=False, disp=True):
             if lockon_num==" 1" and lockon_num_pre == " 0" :
                 xc.append(int(line.split( "](" )[1][0:3]))
                 yc.append(int(line.split( "](" )[1][4:7]))
-                if detect_frame == 0 : detect_frame = j
+                detect_frame.append(j)
         
         for i in range(0,len(xc)):
-            if disp : print( "detectFrame:"+str(detect_frame)+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
+            if disp : print( "detectFrame:"+str(detect_frame[i])+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
         
         f.close()
 
@@ -253,7 +258,7 @@ def bmp2avi(path_dir, target_dir, remake=False, disp=True):
         return
 
     try:
-        img1 = cv2.imread(path_dir+files[0])
+        img1 = cv2.imread(path_dir+bmp_fn_list[0])
         height , width , layers =  img1.shape
     except AttributeError as e:
         # BMP fileが壊れている場合
@@ -261,102 +266,117 @@ def bmp2avi(path_dir, target_dir, remake=False, disp=True):
         print(e.args)
         return 
 
-    filename     = target_dir+"/"+files[0][4:].split(".")[0]+'_00.avi'
-    filename_log = target_dir+"/"+files[0][4:].split(".")[0]+'_00t.txt'
-    filename_img = target_dir+"/"+files[0][4:].split(".")[0]+'_00s.png'
-    if os.path.exists( filename ) :
-        os.remove( filename )
-        #return
-    if os.path.exists( filename_log ) :
-        os.remove( filename_log )
-        #return
-    if os.path.exists( filename_img ) :
-        os.remove( filename_img )
-        #return
-   
-    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-    #fourcc = cv2.VideoWriter_fourcc(*'H264')
-    #fourcc = cv2.cv.CV_FOURCC('D', 'I', 'B', ' ')
-    #fourcc = cv2.cv.CV_FOURCC('I', '4', '2', '0')
-    #fourcc = cv2.cv.CV_FOURCC('D', 'I', 'V', 'X')
-    video = cv2.VideoWriter(filename, fourcc,30,(width,height))
-    #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('H', 'Y', 'M', 'T'),30,(width,height))
-    #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('U', 'L', 'Y', '0'),30,(width,height))
-    #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('L', 'A', 'G', 'S'),30,(width,height))
-    #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'),30,(width,height))
-
-    if disp : cv2.namedWindow('BMP2AVI')
+    flag = False
     ft=[]
-    for fn in files:
-        ft.append( fn[4:] )
-    dic = dict(zip(ft,files))
+    for f in bmp_fn_list:
+        ft.append( f[4:] )
+    bmp_fn_dic = dict(zip(ft, bmp_fn_list))
+    bmp_fn_diclist_sorted = sorted(bmp_fn_dic.items(), key=lambda x:x[0])
+    #bmp_fn_list_sorted = list(bmp_fn_dic_sorted.values())
+    #print( bmp_fn_diclist_sorted)
 
-    # key値でソート
-    j=0
-    size=24
-    #img_lighten = np.zeros((size*5, size, 1))
-    for k, fn in sorted(dic.items()):
-        if disp : print( k, fn )
-
-        if fn.endswith(".BMP") :
-            try:
-                img = cv2.imread(path_dir+fn)
-                #small_image_lighten(img_lighten, img, detect_frame,j,xc[0],yc[0],size)
-                #cv2.imwrite(filename_img, img_lighten)
-                xcc=xc[0] ; ycc=yc[0]
-            
-                if detect_frame < 2 :
-                    img0 = small_image(img, xcc, ycc, size) 
-                    img_lighten = img0  
-                if detect_frame-2 == j :
-                    img_2 = small_image(img, xcc, ycc, size)
-                    img0 = small_image(img, xcc, ycc, size)
-                    img_lighten = img0
-                if detect_frame-1 == j :
-                    img_1 = small_image(img, xcc, ycc, size)
-                    img0 = small_image(img, xcc, ycc, size)
-                    img_lighten = vconcat_resize_min([img_lighten, img0] )
-                if detect_frame-0 == j :
-                    img_0 = small_image(img, xcc, ycc, size)
-                    small_image_write2(img_2, img_1, img_0, xcc, ycc, filename_img)
-                    #small_image_write(img,xcc,ycc,filename_img)
-                    img0 = small_image(img, xcc, ycc, size)
-                    img_lighten = vconcat_resize_min([img_lighten, img0] )
-                if detect_frame+2 == j :
-                    img0 = small_image(img, xcc, ycc, size)
-                    img_lighten = vconcat_resize_min([img_lighten, img0] )
-                if detect_frame+4 == j :
-                    img0 = small_image(img, xcc, ycc, size)
-                    img_lighten = vconcat_resize_min([img_lighten, img0] )
-                    #cv2.imwrite(filename_img, img_lighten)
-            except UnboundLocalError as e:
-                print( "UnboundLocalError" )
-                print(e.args)
-                continue
-            except IndexError as e:
-                print( "IndexError" )
-                print(e.args)
-                return
-
-            for i in range(0,len(xc)):
-                cv2.circle(img,(xc[i],yc[i]),25-i,(255-5*i,255-5*i,0))
-            
-            if disp : cv2.imshow('BMP2AVI', img)
-            video.write(img)
-            if disp : cv2.waitKey(20)
-        if fn == "log.txt":
-            shutil.copyfile(path_dir+fn, filename_log)
-        j=j+1
-
-    cv2.destroyAllWindows()
-    video.release()
-
-    print( "Output:",filename )
+    for i in range(len(detect_frame)) :
+        filename     = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00.avi'
+        filename_log = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00t.txt'
+        filename_img = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00s.png'
+        print( filename, filename_img, filename_log)
+        if os.path.exists( filename ) :
+            os.remove( filename )
+            #return
+        if os.path.exists( filename_log ) :
+            os.remove( filename_log )
+            #return
+        if os.path.exists( filename_img ) :
+            os.remove( filename_img )
+            #return
     
-    #avi作成済み目印
-    f=open(path_dir+"avi_make_ended.txt","w")
-    f.close()
-    #print( path_dir+"avi_make_ended.txt" )
+        #fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # o
+        #fourcc = cv2.VideoWriter_fourcc(*'X264') #H264      x
+        fourcc = cv2.VideoWriter_fourcc(*'ULRG') #UtVideo   o
+        #fourcc = cv2.VideoWriter_fourcc(*'LAGS') #Lagarith  x
+        #fourcc = cv2.cv.CV_FOURCC('D', 'I', 'B', ' ')
+        #fourcc = cv2.cv.CV_FOURCC('I', '4', '2', '0')
+        #fourcc = cv2.cv.CV_FOURCC('D', 'I', 'V', 'X')
+        video = cv2.VideoWriter(filename, fourcc,30,(width,height))
+        #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('H', 'Y', 'M', 'T'),30,(width,height))
+        #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('U', 'L', 'Y', '0'),30,(width,height))
+        #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('L', 'A', 'G', 'S'),30,(width,height))
+        #video = cv2.VideoWriter(filename, cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'),30,(width,height))
+
+        if disp : cv2.namedWindow('BMP2AVI')
+        # key値でソート
+        j=0
+        size=24
+        #img_lighten = np.zeros((size*5, size, 1))
+        for kk in range(len(bmp_fn_diclist_sorted)) :
+            k, fn = bmp_fn_diclist_sorted.pop(0)
+
+            if disp : print( k, fn )
+
+            if fn.endswith(".BMP") :
+                if j==0:
+                    dt0 = get_datetime(fn)
+                dt1 = get_datetime(fn)
+                td = dt1 - dt0
+                dt0 = dt1
+                if td.seconds > 5 : # 5 sec kari
+                    flag = True
+                    break
+
+                try:
+                    img = cv2.imread(path_dir+fn)
+                    #small_image_lighten(img_lighten, img, detect_frame,j,xc[0],yc[0],size)
+                    #cv2.imwrite(filename_img, img_lighten)
+                    xcc=xc[i] ; ycc=yc[i]
+                
+                    if detect_frame[i] < 2 :
+                        img0 = small_image(img, xcc, ycc, size) 
+                        #img_lighten = img0  
+                    if detect_frame[i]-2 == j :
+                        img_2 = small_image(img, xcc, ycc, size)
+                        img0 = small_image(img, xcc, ycc, size)
+                        #img_lighten = img0
+                    if detect_frame[i]-1 == j :
+                        img_1 = small_image(img, xcc, ycc, size)
+                        img0 = small_image(img, xcc, ycc, size)
+                        #img_lighten = vconcat_resize_min([img_lighten, img0] )
+                    if detect_frame[i]-0 == j :
+                        img_0 = small_image(img, xcc, ycc, size)
+                        small_image_write2(img_2, img_1, img_0, xcc, ycc, filename_img)
+                        #small_image_write(img,xcc,ycc,filename_img)
+                        img0 = small_image(img, xcc, ycc, size)
+                        #img_lighten = vconcat_resize_min([img_lighten, img0] )
+                except UnboundLocalError as e:
+                    print( "UnboundLocalError" )
+                    print(e.args)
+                    continue
+                except IndexError as e:
+                    print( "IndexError" )
+                    print(e.args)
+                    return
+
+                for ii in range(0,len(xc)):
+                    cv2.circle(img,(xc[ii],yc[ii]),25-ii,(255-5*ii,255-5*ii,0))
+                
+                if disp : cv2.imshow('BMP2AVI', img)
+                video.write(img)
+                if disp : cv2.waitKey(20)
+            if fn == "log.txt":
+                shutil.copyfile(path_dir+fn, filename_log)
+            j=j+1
+
+        cv2.destroyAllWindows()
+        video.release()
+        print( "Output:",filename )
+        
+        #avi作成済み目印
+        f=open(path_dir+"avi_make_ended.txt","w")
+        f.close()
+        #print( path_dir+"avi_make_ended.txt" )
+
+def proc_log_file():
+    flog_src = open(path_dir+'log.txt' )
+    flog_tar = open( filename_log)
 
 #def fname(main_dir) :
 #    files = os.listdir(main_dir)
@@ -409,7 +429,7 @@ def rename_small_image( fnfull, flg_list=[-1], target_dir='C:/Users/root/Documen
         print(filename_img)
         if os.path.isfile( filename_img ):
             return
-            
+
         fn0 = get_fn_small_image(fnfull, id, target_dir)
         if fn0 == '' :
             return
@@ -565,6 +585,7 @@ def make_small_image( fnfull, target_dir='C:/Users/root/Documents/Python Scripts
             j=j+1
         print('make NN data: '+filename_img)
 
+#
 def fish_dir(main_dir, t_dir, remake=False, disp=True):
     print( "fish_dir() "+main_dir , t_dir )
     if not os.path.isdir(main_dir):
@@ -594,8 +615,7 @@ def fish_dir(main_dir, t_dir, remake=False, disp=True):
             flog.append( f )
 #            zf.write( main_dir + f )
     # ログファイル作成        
-#    zf.close()
-    
+#    zf.close()    
     
     for fd in fdir :
         if disp : print( fd,t_dir )
@@ -637,6 +657,7 @@ def get_detect_loc(cvvfn):
     #return 0,0,0
 
 def base_dir_pre_f( base_dir):
+    print(base_dir)
     bbase_dir = os.path.dirname(base_dir)
     dd = base_dir[-8:]
     dt = datetime.date(int(dd[:4]),int(dd[4:6]),int(dd[6:]))
@@ -670,6 +691,122 @@ def find_fish_dir(fn):
     return ''
     #print(base_dir, base_dir_pre, base_fn, fish_dir_list)
 
+# fn:image file name
+def get_datetime(fn):
+    # fn: '20200503_013619_109_00.avi'
+    # fn: '00002_20200423_200806_965.avi' 特殊構成
+    # fn: '000_20200503_191038_356.BMP'
+    # dt1 = datetime.datetime(year=2017, month=10, day=10, hour=15)
+    #print(fn, len(fn))
+    k=0
+    if fn.endswith('.avi') :
+        if len(fn) == 26 :
+            k = 0
+        elif  len(fn) == 29 :
+            k = 6
+    elif fn.endswith('.BMP') :
+        if len(fn) == 27 :
+            k = 4
+            fn = fn.replace('.BMP','_0.BMP')
+
+    try:
+        st2 = fn[k:].split('_')
+        yy = st2[0][:4]
+        mo = st2[0][4:6]
+        dd = st2[0][-2:]
+        hh = st2[1][:2]
+        mm = st2[1][2:4]
+        ss = st2[1][-2:]
+        msec = st2[2]
+        dt1 = datetime.datetime(int(yy),int(mo),int(dd),int(hh),int(mm),int(ss),int(msec+'000'))
+    except IndexError as e:
+        # BMP fileが壊れている場合
+        print( "IndexError(get_datetime):"+fn )
+        print(e.args)
+        return 
+    except ValueError as e:
+        # BMP fileが壊れている場合
+        print( "ValueError(get_datetime):"+fn+'  yy=',str(yy) )
+        print(e.args)
+        return 
+    return dt1
+
+# 時刻を指定し、fish_dirを探す
+#   time_error = 10 #sec 　許容時間誤差
+def serch_fish_dir(fnfull, time_error=60):
+    if len(fnfull) == 0 :
+        print('error fn empty. (serch_fish_dir): '+fnfull)
+        return ''
+    base_dir = os.path.dirname(fnfull)
+    base_dir_pre = base_dir_pre_f(base_dir)
+    base_fn  = os.path.basename(fnfull)
+    fish_dir = base_dir + '/Fish1'
+    dt0 = get_datetime(base_fn)
+
+    fish_dir_list = []
+    for f in  os.listdir( fish_dir ):
+        if os.path.isdir(fish_dir+'/'+ f):
+            fish_dir_list.append(fish_dir+'/'+ f)
+    fish_dir = base_dir_pre + '/Fish1'
+    for f in  os.listdir( fish_dir ):
+        if os.path.isdir(fish_dir+'/'+ f):
+            fish_dir_list.append(fish_dir+'/'+ f)
+
+    obs_files=[]
+    fish_dir_min=''
+    for d in fish_dir_list:
+        for f in os.listdir(d):
+            if f.endswith('.BMP'):
+                fn = os.path.basename(f)
+                dt1 = get_datetime(fn)
+                if dt1 >= dt0 :
+                    td = dt1 -dt0
+                    if td.seconds <=  time_error :
+                        obs_files.append(f)
+                        fish_dir_min = d
+                        time_error = td.seconds
+                else :
+                    td = dt0 -dt1
+                    if td.seconds <=  time_error :
+                        obs_files.append(f)
+                        fish_dir_min = d
+                        time_error = td.seconds
+    print(fnfull, time_error, fish_dir_min)
+    return fish_dir_min
+
+def get_same_obs_files(fullfn):
+    if len(fullfn) == 0 :
+        print('error fn empty. (get_same_obs_files): '+fullfn)
+        return ''
+        
+    time_error = 10 #sec 　許容時間誤差
+    fn = os.path.basename(fullfn)
+    dt0 = get_datetime(fn)
+ 
+    #path = os.path.dirname(fullfn)
+    #file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    obs_files=[]
+    for f in get_all_obs_files(fullfn):
+        fn = os.path.basename(f)
+        dt1 = get_datetime(fn)
+        if dt1 >= dt0 :
+            td = dt1 -dt0
+            if td.seconds <=  time_error :
+                obs_files.append(f)
+            else:
+                break
+        else :
+            td = dt0 -dt1
+            if td.seconds <=  time_error :
+                obs_files.append(f)
+        #print(f,dt0,dt1,td.seconds)
+    return obs_files
+
+def remake_00avi( fnfull, remake=True, disp=False ):
+    fish_dir =  serch_fish_dir( fnfull )
+    target_dir = os.path.dirname( fnfull )
+    bmp2avi( fish_dir, target_dir, remake, disp, True)
+
 if __name__ == 'xx__main__':
            
     main_dir = './fishdata/fish1/'
@@ -690,17 +827,23 @@ if __name__ == 'xx__main__':
 if __name__ == "__main__":
     fn='J:/MT/20200311/20200311_025809_540_00.avi'
     fn='J:/MT/20200508/20200508_191440_616_00.avi'
-    fn='J:/MT/20190107/20190107_013333_230_00.avi'
+    fn='J:/MT/20190107/20190107_013333_230_00.avi'  
+    fn='J:/MT/20200430/20200430_223429_526_9.avi'
 
-    is_small_image_id(fn, 2)
-    flg = get_fn_small_image(fn)
-    rename_small_image(fn,2)
+    path_dir ='J:/MT/20200430/Fish1/30488'
+    t_dir = 'J:/tmp'
+    #serch_fish_dir(fn)
+    remake_00avi(fn,True, True)
 
-    fish_dir =  find_fish_dir(fn)
-    detect_frame, xc, yc =  get_detect_loc(fn)
-    make_small_image( fn )
+    #is_small_image_id(fn, 2)
+    #flg = get_fn_small_image(fn)
+    #rename_small_image(fn,2)
+
+    #fish_dir =  find_fish_dir(fn)
+    #detect_frame, xc, yc =  get_detect_loc(fn)
+    #make_small_image( fn )
     
-    print( fish_dir, detect_frame, xc, yc, flg)
+    #print( fish_dir, detect_frame, xc, yc, flg)
 
     sys.exit()
 
