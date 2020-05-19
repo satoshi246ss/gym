@@ -7,6 +7,7 @@ import os
 import shutil
 import datetime
 import time
+import glob
 #import Image
 
 #縦に連結
@@ -198,6 +199,53 @@ def small_image_concat( img_lighten, img, detect_frame, j, xc, yc, size, filenam
                 img_lighten = vconcat_resize_min([img_lighten, img0] )
                 cv2.imwrite(filename_img, img_lighten)
 
+# log file　を時刻まとまりに分割　　ts(sec)間が空いていれば先頭時刻で分割
+def split_log_file(fnfull, ts=1):
+    disp = False #True
+    #path_dir = os.path.dirname(fnfull)
+    xc=[]
+    yc=[]
+    detect_frame=[]
+    lockon_num     = " 0"
+    lockon_num_pre = " 0"
+    
+    det_id=0
+    outlist=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+    if os.path.exists( fnfull ) :
+        with  open( fnfull ,"r") as f :
+            strlist = f.readlines()
+            j=0
+            for line in strlist:
+                j = j+1
+                st = line[0:15]+'000'
+                date_dt = datetime.datetime.strptime(st, '%d %H:%M:%S.%f') 
+                if j==1 :
+                    date_dt_pre = date_dt                    
+                td = date_dt - date_dt_pre
+                if td.seconds > ts :
+                    det_id += 1
+                    print('det_id=',det_id, td.seconds)
+                date_dt_pre = date_dt                    
+                outlist[det_id].append(line)
+                #print(date_dt)
+
+                lockon_num_pre = lockon_num
+                lockon_num = line.split( "](" )[1][20:22]
+                if lockon_num==" 1" and lockon_num_pre == " 0" :
+                    xc.append(int(line.split( "](" )[1][0:3]))
+                    yc.append(int(line.split( "](" )[1][4:7]))
+                    detect_frame.append(j)
+            
+            for i in range(0,len(xc)):
+                if disp : print( "detectFrame:"+str(detect_frame[i])+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
+
+    for i in range( det_id+1 ):
+        fn = fnfull.replace('.txt',str(i)+'.txt')
+        with open(fn,'w') as f:
+            f.writelines(outlist[i])
+    if len(xc) != det_id+1 :
+        print("warning:検出数と分割したlogファイル数が違います")
+
 # path_dir fish data directory
 # target_dir 保存日ディレクトリ
 def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
@@ -235,21 +283,19 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
     lockon_num     = " 0"
     lockon_num_pre = " 0"
     if os.path.exists(path_dir+"log.txt" ) :
-        f=open(path_dir+"log.txt","r")
-        strlist = f.readlines()
-        for line in strlist:
-            j = j+1
-            lockon_num_pre = lockon_num
-            lockon_num = line.split( "](" )[1][20:22]
-            if lockon_num==" 1" and lockon_num_pre == " 0" :
-                xc.append(int(line.split( "](" )[1][0:3]))
-                yc.append(int(line.split( "](" )[1][4:7]))
-                detect_frame.append(j)
-        
-        for i in range(0,len(xc)):
-            if disp : print( "detectFrame:"+str(detect_frame[i])+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
-        
-        f.close()
+        with  open(path_dir+"log.txt","r") as f :
+            strlist = f.readlines()
+            for line in strlist:
+                j = j+1
+                lockon_num_pre = lockon_num
+                lockon_num = line.split( "](" )[1][20:22]
+                if lockon_num==" 1" and lockon_num_pre == " 0" :
+                    xc.append(int(line.split( "](" )[1][0:3]))
+                    yc.append(int(line.split( "](" )[1][4:7]))
+                    detect_frame.append(j)
+            
+            for i in range(0,len(xc)):
+                if disp : print( "detectFrame:"+str(detect_frame[i])+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
 
     # 2度目のavi化は行わない
     #print( "Check:"+path_dir+"avi_make_ended.txt")
@@ -266,7 +312,6 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
         print(e.args)
         return 
 
-    flag = False
     ft=[]
     for f in bmp_fn_list:
         ft.append( f[4:] )
@@ -289,7 +334,11 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
         if os.path.exists( filename_img ) :
             os.remove( filename_img )
             #return
-    
+        log_fn = path_dir +'log'+str(i)+'.txt'
+        print('log_fn=', log_fn)
+        if os.path.exists( log_fn ):
+            shutil.copyfile( log_fn, filename_log)
+       
         #fourcc = cv2.VideoWriter_fourcc(*'DIVX')  # o
         #fourcc = cv2.VideoWriter_fourcc(*'X264') #H264      x
         fourcc = cv2.VideoWriter_fourcc(*'ULRG') #UtVideo   o
@@ -691,11 +740,23 @@ def find_fish_dir(fn):
     return ''
     #print(base_dir, base_dir_pre, base_fn, fish_dir_list)
 
+# logfn:log file name
+def get_logfile_datetime(logfnfull):
+    st = logfnfull.replace('\\','/').split('/')
+    #print(logfnfull, st)
+    with open(logfnfull,'r') as f:
+        line = f.readline()
+        st1 = st[-4] + line[2:15]+'000'
+        date_dt = datetime.datetime.strptime(st1, '%Y%m%d %H:%M:%S.%f') 
+    #print(st1, date_dt)
+    return date_dt
+
 # fn:image file name
 def get_datetime(fn):
     # fn: '20200503_013619_109_00.avi'
     # fn: '00002_20200423_200806_965.avi' 特殊構成
     # fn: '000_20200503_191038_356.BMP'
+    # fn: '20200430_223333.880_00t.txt'
     # dt1 = datetime.datetime(year=2017, month=10, day=10, hour=15)
     #print(fn, len(fn))
     k=0
@@ -708,6 +769,10 @@ def get_datetime(fn):
         if len(fn) == 27 :
             k = 4
             fn = fn.replace('.BMP','_0.BMP')
+    elif fn.endswith('.txt') :
+        if len(fn) == 27 :
+            k = 0
+            #fn = fn.replace('.BMP','_0.BMP')
 
     try:
         st2 = fn[k:].split('_')
@@ -718,6 +783,7 @@ def get_datetime(fn):
         mm = st2[1][2:4]
         ss = st2[1][-2:]
         msec = st2[2]
+        #print(yy,mo,dd,hh,mm,ss,msec)
         dt1 = datetime.datetime(int(yy),int(mo),int(dd),int(hh),int(mm),int(ss),int(msec+'000'))
     except IndexError as e:
         # BMP fileが壊れている場合
@@ -726,7 +792,7 @@ def get_datetime(fn):
         return 
     except ValueError as e:
         # BMP fileが壊れている場合
-        print( "ValueError(get_datetime):"+fn+'  yy=',str(yy) )
+        print( "ValueError(get_datetime):"+fn+'  yy=',str(yy), k )
         print(e.args)
         return 
     return dt1
@@ -774,6 +840,35 @@ def serch_fish_dir(fnfull, time_error=60):
     print(fnfull, time_error, fish_dir_min)
     return fish_dir_min
 
+# 時刻を指定し、一番近いlogfileを探す
+#   time_error = 10 #sec 　許容時間誤差
+def serch_logfile(fullfn, time_error=10):
+    if len(fullfn) == 0 :
+        print('error fn empty. (serch_logfile): '+fullfn)
+        return ''
+        
+    fn = os.path.basename(fullfn)
+    dt0 = get_datetime(fn)
+ 
+    path = os.path.dirname(fullfn)
+    #file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    file_list = glob.glob(path+'/*.txt')
+    log_file=''
+    td_min = time_error
+    for f in file_list:  # get_all_obs_files(fullfn):
+        fn = os.path.basename(f)
+        dt1 = get_datetime(fn)
+        if dt1 >= dt0 :
+            td = dt1 -dt0
+        else :
+            td = dt0 -dt1
+        if time_error >= td.seconds and td_min > td.seconds :
+            log_file = f
+            td_min = td.seconds 
+        print(f,dt0,dt1,td.seconds)
+    return log_file
+
+
 def get_same_obs_files(fullfn):
     if len(fullfn) == 0 :
         print('error fn empty. (get_same_obs_files): '+fullfn)
@@ -804,8 +899,25 @@ def get_same_obs_files(fullfn):
 
 def remake_00avi( fnfull, remake=True, disp=False ):
     fish_dir =  serch_fish_dir( fnfull )
+    split_log_file(fish_dir+'/log.txt')
     target_dir = os.path.dirname( fnfull )
     bmp2avi( fish_dir, target_dir, remake, disp, True)
+
+# logfile　有無のチェック、ない場合は、元からコピー
+def proc_logfile( fish_00_avi_fnfull ):
+    if not fish_00_avi_fnfull.endswith('00.avi'):
+        return
+    if not os.path.exists(fish_00_avi_fnfull):
+        return
+    fish_dir =  serch_fish_dir( fish_00_avi_fnfull )
+    split_log_file(fish_dir+'/log.txt')
+
+    for f in glob.glob(fish_dir+'/log*.txt'):
+        if not f.endswith('log.txt'):
+            path_dir = os.path.dirname(fish_00_avi_fnfull)
+            filename_log = path_dir+get_logfile_datetime(f).strftime('/%Y%m%d_%H%M%S_%f_') .replace('000_','')+'_00t.txt'
+            print('copy ',f,'->',filename_log)
+            shutil.copyfile( f, filename_log)
 
 if __name__ == 'xx__main__':
            
@@ -829,11 +941,18 @@ if __name__ == "__main__":
     fn='J:/MT/20200508/20200508_191440_616_00.avi'
     fn='J:/MT/20190107/20190107_013333_230_00.avi'  
     fn='J:/MT/20200430/20200430_223429_526_9.avi'
-
+    fn='J:/MT/20200430/20200430_223333_880_00.avi'
+    fn='J:/MT/20200430/20200430_223430_474_00.avi'
     path_dir ='J:/MT/20200430/Fish1/30488'
     t_dir = 'J:/tmp'
-    #serch_fish_dir(fn)
-    remake_00avi(fn,True, True)
+
+    print(serch_logfile(fn))
+    #proc_logfile(fn)
+    get_logfile_datetime(path_dir+'/log.txt')
+    fish_dir =  serch_fish_dir( fn )
+    split_log_file(fish_dir+'/log.txt')
+ 
+    #remake_00avi(fn,True, True)
 
     #is_small_image_id(fn, 2)
     #flg = get_fn_small_image(fn)

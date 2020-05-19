@@ -16,7 +16,10 @@ import bmp2avi_lib
 def rename_00002_avi(path):
     #path = os.path.dirname(fnfull)
     file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    print(file_list)
     for f in file_list:
+        if f.find('002.avi') == -1:
+            continue
         basefn = os.path.basename(f)
         st = basefn.split('_')
         if st[0] == '00002' and len(st)==4 :
@@ -137,7 +140,7 @@ class GUI:
         if len(all_files) == 0 :
             print('Not obsfile exsit.')
             return
-        print('all_files:',all_files)
+        #print('all_files:',all_files)
         for f in all_files :
             if f.endswith("00.avi"):
                 avi_files.append(f) 
@@ -158,7 +161,11 @@ class GUI:
                 avi_files.append(f) 
 
         #print(avi_files)
-        self.cvv.obsfn = avi_files[0]
+        self.obsfn = avi_files[0]
+        self.cvv.fn = avi_files[0]
+        fish_dir =  bmp2avi_lib.serch_fish_dir( self.obsfn )
+        bmp2avi_lib.split_log_file(fish_dir+'/log.txt')
+        bmp2avi_lib.proc_logfile(avi_files[0])
         self.obs_files = get_same_obs_files( avi_files[0] )
         print('self.obs_path:', self.obs_files)
         self.cvv.set_filelist(avi_files)        
@@ -482,7 +489,7 @@ class GUI:
         lockon_num_pre = " 0"
         path_dir = self.cvv.base_dir
         basename = os.path.basename( self.cvv.fn )
-        log_file_name = path_dir+'/'+basename.replace(".avi","t.txt")
+        log_file_name = bmp2avi_lib.serch_logfile(self.cvv.fn )  #path_dir+'/'+basename.replace(".avi","t.txt")
         #print('log_file_name:', log_file_name, basename, path_dir)
         if os.path.exists( log_file_name ) :
             with open( log_file_name, "r") as f:
