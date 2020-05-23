@@ -13,10 +13,34 @@ import numpy as np
 import bmp2avi_lib
 ###import meteor1_eval
 
+from logging import getLogger, StreamHandler, Formatter, FileHandler, DEBUG
+
+def setup_logger(log_folder, modname=__name__):
+    logger = getLogger(modname)
+    logger.setLevel(DEBUG)
+
+    sh = StreamHandler()
+    sh.setLevel(DEBUG)
+    formatter = Formatter('%(asctime)s - %(name)s(%(lineno)d) - %(message)s')
+    sh.setFormatter(formatter)
+    logger.addHandler(sh)
+
+    fh = FileHandler(log_folder) #fh = file handler
+    fh.setLevel(DEBUG)
+    fh_formatter = Formatter('%(asctime)s - %(filename)s - %(name)s(%(lineno)d) - %(levelname)s - %(message)s')
+    fh.setFormatter(fh_formatter)
+    logger.addHandler(fh)
+    return logger
+# 保存するファイル名を指定
+#log_folder = '{0}.log'.format(datetime.date.today())
+log_folder = 'tk_video.log'
+# ログの初期設定を行う
+logger = setup_logger(log_folder)
+
 def rename_00002_avi(path):
     #path = os.path.dirname(fnfull)
     file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
-    print(file_list)
+    #print(file_list)
     for f in file_list:
         if f.find('002.avi') == -1:
             continue
@@ -52,12 +76,37 @@ def get_same_obs_files(fullfn):
         print('error fn empty. (get_same_obs_files): '+fullfn)
         return ''
         
-    time_error = 10 #sec 　許容時間誤差
     fn = os.path.basename(fullfn)
     dt0 = bmp2avi_lib.get_datetime(fn)
  
+    # (_1　カメラ）データの時刻誤差を調査
+    if fullfn[-7:] == '_00.avi':
+        with open('time_error_data.txt','a') as fd:
+            time_error = 120 #sec 　許容時間誤差
+            time_error_dict = {}
+            for f in get_all_obs_files(fullfn):
+                if f.endswith('_1.avi'):
+                    fn = os.path.basename(f)
+                    dt1 = bmp2avi_lib.get_datetime(fn)
+                    if dt1 >= dt0 :
+                        td = dt1 -dt0
+                        if td.seconds <=  time_error :
+                            key = f[-6:-4]
+                            time_error_dict.setdefault(key, []).append([td.seconds, f])
+                            st = key+' '+str(td.seconds)+' '+f+'\n'
+                            fd.write(st)
+                    else :
+                        td = dt0 -dt1
+                        if td.seconds <=  time_error :
+                            key = f[-6:-4]
+                            time_error_dict.setdefault(key, []).append([td.seconds, f])
+                            st = key+' '+str(td.seconds)+' '+f+'\n'
+                            fd.write(st)
+            print(time_error_dict)
+
     #path = os.path.dirname(fullfn)
     #file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    time_error = 10 #sec 　許容時間誤差
     same_obs_files=[]
     for f in get_all_obs_files(fullfn):
         fn = os.path.basename(f)
@@ -72,7 +121,7 @@ def get_same_obs_files(fullfn):
             td = dt0 -dt1
             if td.seconds <=  time_error :
                 same_obs_files.append(f)
-        print(f,dt0,dt1,td.seconds)
+        #print(f,dt0,dt1,td.seconds)
     return same_obs_files
 
 class GUI:
@@ -115,6 +164,9 @@ class GUI:
 
         self.select_file()
         print('GUI init cvv.fn: '+self.cvv.fn )
+        if self.cvv.fn == '' :
+            logger.info(targetpath+' : file not found.')
+            return
         bmp2avi_lib.make_small_image(self.cvv.fn)
         self.cvv.imgfn = bmp2avi_lib.get_fn_small_image(self.cvv.fn)
         self.cvv.openFile()
@@ -261,7 +313,7 @@ class GUI:
         for f in self.obs_files:
             if f[-6:-4]  =='00':
                 self.change_radio_button2_bgcolor(0)
-            elif f[-6:-4]=='01':
+            elif f[-6:-4]=='_1':
                 self.change_radio_button2_bgcolor(1)
             elif f[-6:-4]=='_3':
                 self.change_radio_button2_bgcolor(3)
@@ -732,7 +784,7 @@ class GUI:
         self.cam1_fr_interval = 1000.0 / 75.0 # cam0のフレーム間隔(ms) 1000/fr
         #cv2.namedWindow('BMP2AVI') 
         ###self.net = meteor1_eval.load_nn()
-        self.first_frame = tk.Frame(self.root, bd=2, relief="ridge", bg="white",
+        self.first_frame = tk.Frame(self.root, bd=2, relief="ridge", bg="gray50",
                                     width=self.ROOT_X, height=self.ROOT_Y)
         self.first_frame.grid(row=0, column=0)
         self.create_radio_button()
@@ -989,6 +1041,7 @@ class CV2video():
 
 class Main:
     def __init__(self, targetpath):
+        logger.info(targetpath)
         self.gui=GUI( targetpath )
         self.gui.root.mainloop()
 

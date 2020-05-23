@@ -9,6 +9,29 @@ import datetime
 import time
 import glob
 #import Image
+from logging import getLogger, StreamHandler, Formatter, FileHandler, DEBUG
+
+def setup_logger(log_folder, modname=__name__):
+    logger = getLogger(modname)
+    logger.setLevel(DEBUG)
+
+    sh = StreamHandler()
+    sh.setLevel(DEBUG)
+    formatter = Formatter('%(asctime)s - %(name)s(%(lineno)d) - %(message)s')
+    sh.setFormatter(formatter)
+    logger.addHandler(sh)
+
+    fh = FileHandler(log_folder) #fh = file handler
+    fh.setLevel(DEBUG)
+    fh_formatter = Formatter('%(asctime)s - %(filename)s - %(name)s(%(lineno)d) - %(levelname)s - %(message)s')
+    fh.setFormatter(fh_formatter)
+    logger.addHandler(fh)
+    return logger
+# 保存するファイル名を指定
+#log_folder = '{0}.log'.format(datetime.date.today())
+log_folder = 'bmp2avi_lib.log'
+# ログの初期設定を行う
+logger = setup_logger(log_folder)
 
 #縦に連結
 def vconcat_resize_min(im_list, interpolation=cv2.INTER_CUBIC):
@@ -201,6 +224,10 @@ def small_image_concat( img_lighten, img, detect_frame, j, xc, yc, size, filenam
 
 # log file　を時刻まとまりに分割　　ts(sec)間が空いていれば先頭時刻で分割
 def split_log_file(fnfull, ts=1):
+    print('split_log_file:',fnfull)
+    if fnfull == '' and fnfull == '/log.txt':
+        print('split_log_file: fn null')
+        return
     disp = False #True
     #path_dir = os.path.dirname(fnfull)
     xc=[]
@@ -241,14 +268,17 @@ def split_log_file(fnfull, ts=1):
 
     for i in range( det_id+1 ):
         fn = fnfull.replace('.txt',str(i)+'.txt')
+        print(fn,fnfull)
         with open(fn,'w') as f:
             f.writelines(outlist[i])
     if len(xc) != det_id+1 :
         print("warning:検出数と分割したlogファイル数が違います")
+    logger.info(fn)
 
 # path_dir fish data directory
 # target_dir 保存日ディレクトリ
 def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
+    logger.info('Run. ')
     path_dir = fish_dir
     if not os.path.isdir(path_dir):
         print( "Error 1"+path_dir )
@@ -321,6 +351,8 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
     #print( bmp_fn_diclist_sorted)
 
     for i in range(len(detect_frame)) :
+        if len(bmp_fn_diclist_sorted) == 0 :
+            continue
         filename     = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00.avi'
         filename_log = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00t.txt'
         filename_img = target_dir+"/"+bmp_fn_diclist_sorted[0][1][4:].split(".")[0]+'_00s.png'
@@ -404,8 +436,9 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
                     print(e.args)
                     return
 
-                for ii in range(0,len(xc)):
-                    cv2.circle(img,(xc[ii],yc[ii]),25-ii,(255-5*ii,255-5*ii,0))
+                #for ii in range(0,len(xc)):
+                #    cv2.circle(img,(xc[ii],yc[ii]),25-ii,(255-5*ii,255-5*ii,0))
+                cv2.circle(img,(xc[i],yc[i]),25-i,(255-5*i,255-5*i,0))
                 
                 if disp : cv2.imshow('BMP2AVI', img)
                 video.write(img)
@@ -706,7 +739,7 @@ def get_detect_loc(cvvfn):
     #return 0,0,0
 
 def base_dir_pre_f( base_dir):
-    print(base_dir)
+    #print(base_dir)
     bbase_dir = os.path.dirname(base_dir)
     dd = base_dir[-8:]
     dt = datetime.date(int(dd[:4]),int(dd[4:6]),int(dd[6:]))
@@ -799,27 +832,28 @@ def get_datetime(fn):
 
 # 時刻を指定し、fish_dirを探す
 #   time_error = 10 #sec 　許容時間誤差
-def serch_fish_dir(fnfull, time_error=60):
+def serch_fish_dir(fnfull, time_error=120):
     if len(fnfull) == 0 :
         print('error fn empty. (serch_fish_dir): '+fnfull)
         return ''
     base_dir = os.path.dirname(fnfull)
     base_dir_pre = base_dir_pre_f(base_dir)
     base_fn  = os.path.basename(fnfull)
-    fish_dir = base_dir + '/Fish1'
-    dt0 = get_datetime(base_fn)
 
     fish_dir_list = []
-    for f in  os.listdir( fish_dir ):
-        if os.path.isdir(fish_dir+'/'+ f):
-            fish_dir_list.append(fish_dir+'/'+ f)
     fish_dir = base_dir_pre + '/Fish1'
     for f in  os.listdir( fish_dir ):
         if os.path.isdir(fish_dir+'/'+ f):
             fish_dir_list.append(fish_dir+'/'+ f)
+    fish_dir = base_dir + '/Fish1'
+    for f in  os.listdir( fish_dir ):
+        if os.path.isdir(fish_dir+'/'+ f):
+            fish_dir_list.append(fish_dir+'/'+ f)
+    #print( base_dir, base_dir_pre, fish_dir_list)
 
     obs_files=[]
     fish_dir_min=''
+    dt0 = get_datetime(base_fn)
     for d in fish_dir_list:
         for f in os.listdir(d):
             if f.endswith('.BMP'):
@@ -837,7 +871,8 @@ def serch_fish_dir(fnfull, time_error=60):
                         obs_files.append(f)
                         fish_dir_min = d
                         time_error = td.seconds
-    print(fnfull, time_error, fish_dir_min)
+                #print('serch_fish_dir',f, dt0,dt1, td.seconds, time_error, fish_dir_min)
+    print('serch_fish_dir',fnfull, time_error, fish_dir_min)
     return fish_dir_min
 
 # 時刻を指定し、一番近いlogfileを探す
@@ -865,7 +900,7 @@ def serch_logfile(fullfn, time_error=10):
         if time_error >= td.seconds and td_min > td.seconds :
             log_file = f
             td_min = td.seconds 
-        print(f,dt0,dt1,td.seconds)
+        #print(f,dt0,dt1,td.seconds)
     return log_file
 
 
@@ -899,6 +934,7 @@ def get_same_obs_files(fullfn):
 
 def remake_00avi( fnfull, remake=True, disp=False ):
     fish_dir =  serch_fish_dir( fnfull )
+    if fish_dir == '' : return
     split_log_file(fish_dir+'/log.txt')
     target_dir = os.path.dirname( fnfull )
     bmp2avi( fish_dir, target_dir, remake, disp, True)
@@ -937,6 +973,8 @@ if __name__ == 'xx__main__':
 # main
 # 日付指定   
 if __name__ == "__main__":
+    logger.info('Test Run start.')
+
     fn='J:/MT/20200311/20200311_025809_540_00.avi'
     fn='J:/MT/20200508/20200508_191440_616_00.avi'
     fn='J:/MT/20190107/20190107_013333_230_00.avi'  
