@@ -36,27 +36,7 @@ def setup_logger(log_folder, modname=__name__):
 log_folder = 'tk_video.log'
 # ログの初期設定を行う
 logger = setup_logger(log_folder)
-
-def rename_00002_avi(path):
-    #path = os.path.dirname(fnfull)
-    file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
-    #print(file_list)
-    for f in file_list:
-        if f.find('002.avi') == -1:
-            continue
-        basefn = os.path.basename(f)
-        st = basefn.split('_')
-        if st[0] == '00002' and len(st)==4 :
-            dest = path +'/'+ st[1]+'_'+ st[2]+'_'+st[3].replace('.avi','_02.avi')
-            if not os.path.isfile(dest):
-                os.rename(f, dest)
-                print('rename:'+f +'->'+dest)         
-        if st[3] == '002.avi' and len(st)==4 :
-            dest = path +'/'+ basefn.replace('_002.avi','_02.avi')
-            if not os.path.isfile(dest):
-                os.rename(f, dest)
-                print('rename:'+f +'->'+dest)         
-   
+ 
 def get_all_obs_files(fullfn):
     #fn = os.path.basename(fullfn)
     path = os.path.dirname(fullfn)
@@ -78,7 +58,8 @@ def get_same_obs_files(fullfn):
         
     fn = os.path.basename(fullfn)
     dt0 = bmp2avi_lib.get_datetime(fn)
- 
+    #print('get_same_obs_files : ',fullfn,fn,dt0)
+
     # (_1　カメラ）データの時刻誤差を調査
     if fullfn[-7:] == '_00.avi':
         with open('time_error_data.txt','a') as fd:
@@ -107,16 +88,22 @@ def get_same_obs_files(fullfn):
     #path = os.path.dirname(fullfn)
     #file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
     time_error = 10 #sec 　許容時間誤差
+    time_error_awr = 30 #sec 　train 撮影時間
     same_obs_files=[]
     for f in get_all_obs_files(fullfn):
         fn = os.path.basename(f)
         dt1 = bmp2avi_lib.get_datetime(fn)
         if dt1 >= dt0 :
             td = dt1 -dt0
-            if td.seconds <=  time_error :
-                same_obs_files.append(f)
+            if fn.endswith('.ARW'):
+                te = time_error + time_error_awr
             else:
-                break
+                te = time_error
+            
+            if td.seconds <=  te :
+                same_obs_files.append(f)
+            #else:
+                #break
         else :
             td = dt0 -dt1
             if td.seconds <=  time_error :
@@ -183,12 +170,14 @@ class GUI:
 
     # select file   in:obs_path
     def select_file(self):
-        rename_00002_avi(self.obs_path)
+        bmp2avi_lib.rename_00002_avi(self.obs_path)
         #print('選択ファイル名：'+str(self.obs_files))
         print(self.obs_path)
         avi_files = []
         same_files = []
         all_files = get_all_obs_files_dir(self.obs_path)
+        ans = os.path.isdir( self.obs_path )
+        print(ans, self.obs_path, all_files)
         if len(all_files) == 0 :
             print('Not obsfile exsit.')
             return
@@ -647,8 +636,9 @@ class GUI:
             self.rename_imgdata()
             # Meteor以外は、move file
             print(self.cvv.flg1_list, self.cvv.flg1_list.count('0'))
-            if self.cvv.flg1_list.count(0) == 0 :
+            if self.cvv.flg1_list.count('0') == 0 :
                 self.move_del_files(self.obs_files)
+                print(self.obs_files)
 
             value = self.EditBox.get()
             self.cvv.set_idx( int(value) )
@@ -1047,14 +1037,22 @@ class Main:
 
 
 if __name__=="__main__":
+    logger.debug(sys.argv)
+    BaseSoucePath=''
     dtnow = datetime.datetime.now()
     drange=1 #実行日数（戻り日数）
-    if len( sys.argv )   >= 5:
+    if len( sys.argv )   >= 6:
         yyyy=int(sys.argv[1])
         mm  =int(sys.argv[2])
         dd  =int(sys.argv[3])
         drange =int(sys.argv[4])
-    elif len( sys.argv ) == 4:
+        BaseSoucePath = sys.argv[5] 
+    elif len( sys.argv )  == 5:
+        yyyy=int(sys.argv[1])
+        mm  =int(sys.argv[2])
+        dd  =int(sys.argv[3])
+        drange =int(sys.argv[4])
+    elif len( sys.argv )  == 4:
         yyyy=int(sys.argv[1])
         mm  =int(sys.argv[2])
         dd  =int(sys.argv[3])
@@ -1070,8 +1068,9 @@ if __name__=="__main__":
         yyyy=dtnow.year
         mm  =dtnow.month
         dd  =dtnow.day
-        drange =7
-    
+        #drange =7
+
+    print( BaseSoucePath)
     if yyyy < 2000 or yyyy > dtnow.year :
         print( "Year '%s' 範囲外" % yyyy)
         sys.exit()
@@ -1093,8 +1092,9 @@ if __name__=="__main__":
         print( dt)
 
         dir = dt.strftime("/%Y%m%d")
-        TargetDrive   = "J:"
-        BaseSoucePath = TargetDrive + "/MT"
+        if BaseSoucePath=='':
+            TargetDrive   = "J:"
+            BaseSoucePath = TargetDrive + "/MT"
         TargetPath1   = BaseSoucePath + dir
         TargetPath2   = BaseSoucePath + dir + "/Fish1"
 

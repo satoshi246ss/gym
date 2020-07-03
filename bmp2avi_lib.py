@@ -274,11 +274,31 @@ def split_log_file(fnfull, ts=1):
     if len(xc) != det_id+1 :
         print("warning:検出数と分割したlogファイル数が違います")
     logger.info(fn)
+    
+def rename_00002_avi(path):
+    #path = os.path.dirname(fnfull)
+    file_list = sorted([p for p in glob.glob(path+'/**') if os.path.isfile(p)])
+    #print(file_list)
+    for f in file_list:
+        if f.find('002.avi') == -1:
+            continue
+        basefn = os.path.basename(f)
+        st = basefn.split('_')
+        if st[0] == '00002' and len(st)==4 :
+            dest = path +'/'+ st[1]+'_'+ st[2]+'_'+st[3].replace('.avi','_02.avi')
+            if not os.path.isfile(dest):
+                os.rename(f, dest)
+                print('rename:'+f +'->'+dest)         
+        if st[3] == '002.avi' and len(st)==4 :
+            dest = path +'/'+ basefn.replace('_002.avi','_02.avi')
+            if not os.path.isfile(dest):
+                os.rename(f, dest)
+                print('rename:'+f +'->'+dest)         
 
 # path_dir fish data directory
 # target_dir 保存日ディレクトリ
 def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
-    logger.info('Run. ')
+    logger.info('fish dir : '+fish_dir)
     path_dir = fish_dir
     if not os.path.isdir(path_dir):
         print( "Error 1"+path_dir )
@@ -815,7 +835,7 @@ def get_datetime(fn):
         hh = st2[1][:2]
         mm = st2[1][2:4]
         ss = st2[1][-2:]
-        msec = st2[2]
+        msec = st2[2][:3]
         #print(yy,mo,dd,hh,mm,ss,msec)
         dt1 = datetime.datetime(int(yy),int(mo),int(dd),int(hh),int(mm),int(ss),int(msec+'000'))
     except IndexError as e:
@@ -955,6 +975,38 @@ def proc_logfile( fish_00_avi_fnfull ):
             print('copy ',f,'->',filename_log)
             shutil.copyfile( f, filename_log)
 
+def train_max_position(log_file_name):
+    xc=[]
+    yc=[]
+    detect_frame=[]
+    j=0
+    lockon_num     = " 0"
+    lockon_num_pre = " 0"
+    #path_dir = os.path.dirname( cvvfn ) #self.cvv.base_dir
+    #basename = os.path.basename( cvvfn )
+    #print(log_file_name, basename)
+    if os.path.exists( log_file_name ) :
+        with open( log_file_name, "r") as f:
+            strlist = f.readlines()
+            for line in strlist:
+                j = j+1
+                lockon_num_pre = lockon_num
+                lockon_num = line.split( "](" )[1][20:22]
+                if lockon_num==" 1" and lockon_num_pre == " 0" :
+                    xc.append(int(line.split( "](" )[1][0:3]))
+                    yc.append(int(line.split( "](" )[1][4:7]))
+                    detect_frame.append(j)            
+            for i in range(0,len(xc)):
+                #print( "idx:"+str("detectFrame:"+str(detect_frame)+ " (xc,yc)["+str(i)+"]=("+str(xc[i])+","+str(yc[i])+")")
+                print(i,detect_frame[i], xc[i], yc[i])
+                i
+        #f.close()
+
+    if  xc :
+        return  detect_frame, xc, yc
+    return [],[],[]
+
+
 if __name__ == 'xx__main__':
            
     main_dir = './fishdata/fish1/'
@@ -973,7 +1025,11 @@ if __name__ == 'xx__main__':
 # main
 # 日付指定   
 if __name__ == "__main__":
-    logger.info('Test Run start.')
+    #logger.info('Test Run start.')
+
+    fn = './20190120_043836_156_00t.txt'
+    train_max_position(fn)
+    sys.exit()
 
     fn='J:/MT/20200311/20200311_025809_540_00.avi'
     fn='J:/MT/20200508/20200508_191440_616_00.avi'
