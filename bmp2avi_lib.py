@@ -923,7 +923,7 @@ def serch_logfile(fullfn, time_error=10):
         #print(f,dt0,dt1,td.seconds)
     return log_file
 
-
+# ARW file : t0+25s <-> t0+65s
 def get_same_obs_files(fullfn):
     if len(fullfn) == 0 :
         print('error fn empty. (get_same_obs_files): '+fullfn)

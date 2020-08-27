@@ -93,6 +93,8 @@ def get_same_obs_files(fullfn):
     for f in get_all_obs_files(fullfn):
         fn = os.path.basename(f)
         dt1 = bmp2avi_lib.get_datetime(fn)
+        if fn.endswith('.ARW'):
+            dt1 = dt1 - datetime.timedelta(seconds= time_error_awr )
         if dt1 >= dt0 :
             td = dt1 -dt0
             if fn.endswith('.ARW'):
@@ -635,8 +637,8 @@ class GUI:
             bmp2avi_lib.make_small_image(self.cvv.fn)
             self.rename_imgdata()
             # Meteor以外は、move file
-            print(self.cvv.flg1_list, self.cvv.flg1_list.count('0'))
-            if self.cvv.flg1_list.count('0') == 0 :
+            print(self.cvv.flg1_list, self.cvv.flg1_list.count(0))
+            if self.cvv.flg1_list.count(0) == 0 :
                 self.move_del_files(self.obs_files)
                 print(self.obs_files)
 
@@ -909,13 +911,17 @@ class CV2video():
             self.fn = self.flist[self.idx]
     
     def update_idx(self):
+        self.idx +=1
         if len(self.flist) == 0:
+            self.idx = 0
             print('file list empty (update_idx).')
             return            
-        self.idx +=1
-        if len(self.flist) > self.idx :
+        if len(self.flist) == 1:
+            self.idx = 0
             self.fn = self.flist[self.idx]
-        if len(self.flist) <= self.idx :
+        elif len(self.flist) > self.idx :
+            self.fn = self.flist[self.idx]
+        elif len(self.flist) <= self.idx :
             self.idx = 0
             self.fn = self.flist[self.idx]
             print('End of file list. Return inx=0')

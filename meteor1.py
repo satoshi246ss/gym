@@ -51,10 +51,10 @@ def imshow(img):
 
 def main():
     #指定する画像フォルダ
-    train_path ='./tmp/data_20200501/train'
-    test_path  ='./tmp/data_20200501/test'
+    train_path ='./tmp/data_20200809/train'
+    test_path  ='./tmp/data_20200809/test'
 
-    epochs = 500
+    epochs = 100
     _batch_size = 1 #4
     # 取り込んだデータに施す処理を指定
     data_transform = transforms.Compose([

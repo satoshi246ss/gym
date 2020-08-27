@@ -52,10 +52,10 @@ def imshow(img):
 #-----------------------------------------------
 # main
 #-----------------------------------------------
-def load_nn():
+def load_nn(model_path = './meteor1_weight.pth' ): #'model.pth'
     # 学習済データ読込    
     net = Net()
-    model_path = './meteor1_weight.pth' #'model.pth'
+    #model_path = './meteor1_weight.pth' #'model.pth'
     net.load_state_dict(torch.load(model_path))
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     net.to(device)
@@ -158,6 +158,26 @@ def nn_eval( net, img_fn ):
 
     return ( val_preds[0].item() )
 
+def rename_nn( img_fn, ans ):
+    if not os.path.exists( img_fn ) :
+        print('file not found.'+img_fn)
+        return
+    if not os.path.isfile( img_fn ) :
+        print('file not found.'+img_fn)
+        return
+    st = '00s'+str(ans)+'.png'
+    if ( img_fn.endswith('00s.png')) :
+        st_org = '00s.png'
+    elif ( img_fn.endswith('00s0.png')) :
+        st_org = '00s0.png'
+    elif ( img_fn.endswith('00s1.png')) :
+        st_org = '00s1.png'
+    elif ( img_fn.endswith('00s2.png')) :
+        st_org = '00s2.png'
+    fn_org = img_fn
+    img_fn.replace( st_org, st)
+    os.rename(fn_org, img_fn)
+
 if __name__ == '__main__':
   
     #指定する画像フォルダ
@@ -166,11 +186,12 @@ if __name__ == '__main__':
     img_fn ='./tmp/20200311_184214_276_00s2.png'
   
     t1 = time.time()
-    net = load_nn()
+    #net = load_nn('./meteor1_weight_0505.pth' )
+    net = load_nn( )
     t2 = time.time()
     ans = nn_eval( net, img_fn )
     t3 = time.time()
     elapsed_time1 = t2-t1
     elapsed_time2 = t3-t2
-    print(ans)
+    print(img_fn+' : ' + str(ans))
     print(elapsed_time1,elapsed_time2)
