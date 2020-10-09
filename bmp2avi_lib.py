@@ -431,6 +431,7 @@ def bmp2avi(fish_dir, target_dir, remake=False, disp=True, separate=True):
                     xcc=xc[i] ; ycc=yc[i]
                 
                     if detect_frame[i] < 2 :
+                        img_2 = small_image(img, xcc, ycc, size)
                         img0 = small_image(img, xcc, ycc, size) 
                         #img_lighten = img0  
                     if detect_frame[i]-2 == j :
@@ -792,16 +793,35 @@ def find_fish_dir(fn):
                 return d
     return ''
     #print(base_dir, base_dir_pre, base_fn, fish_dir_list)
-
+#
+#  log file の中身から、最初の検出時刻を返す。
 # logfn:log file name
 def get_logfile_datetime(logfnfull):
     st = logfnfull.replace('\\','/').split('/')
-    #print(logfnfull, st)
+    if st[-4].isdecimal() and len(st[-4])==8:
+        yyyymm = st[-4][:-2]
+    elif st[2].isdecimal() and len(st[2])==8:
+        yyyymm = st[2][:-2]
+    else:
+        yyyymm = datetime.datetime.now().strftime('%Y%m')
+        print('warning get_logfile_datetime() yyyymm?')
+    #print('get_logfile_datetime()',logfnfull, st, yyyymm)
+    lockon_num_pre = 0 
+    lockon_num = 0
+    st1=''
     with open(logfnfull,'r') as f:
-        line = f.readline()
-        st1 = st[-4] + line[2:15]+'000'
+        strlist = f.readlines()
+        for line in strlist:
+            lockon_num_pre = lockon_num
+            lockon_num = int( line[55:58] )
+            if lockon_num == 1 and lockon_num_pre == 0 :
+                st1 = yyyymm + line[0:15]+'000'
+                break
+        #line = f.readline()
+        if st1=='':
+            st1 = yyyymm + line[0:15]+'000'
         date_dt = datetime.datetime.strptime(st1, '%Y%m%d %H:%M:%S.%f') 
-    #print(st1, date_dt)
+    #print(logfnfull, st, st1, date_dt) ###
     return date_dt
 
 # fn:image file name
@@ -896,12 +916,12 @@ def serch_fish_dir(fnfull, time_error=120):
     return fish_dir_min
 
 # 時刻を指定し、一番近いlogfileを探す
-#   time_error = 10 #sec 　許容時間誤差
+# time_error = 10 #sec 　許容時間誤差
 def serch_logfile(fullfn, time_error=10):
     if len(fullfn) == 0 :
         print('error fn empty. (serch_logfile): '+fullfn)
         return ''
-        
+            
     fn = os.path.basename(fullfn)
     dt0 = get_datetime(fn)
  
@@ -912,7 +932,8 @@ def serch_logfile(fullfn, time_error=10):
     td_min = time_error
     for f in file_list:  # get_all_obs_files(fullfn):
         fn = os.path.basename(f)
-        dt1 = get_datetime(fn)
+        #dt1 = get_datetime(fn)
+        dt1 = get_logfile_datetime(f)
         if dt1 >= dt0 :
             td = dt1 -dt0
         else :
@@ -920,7 +941,9 @@ def serch_logfile(fullfn, time_error=10):
         if time_error >= td.seconds and td_min > td.seconds :
             log_file = f
             td_min = td.seconds 
-        #print(f,dt0,dt1,td.seconds)
+        print(f,dt0,dt1,td.seconds)
+#    if log_file=='':
+#        proc_logfile(fullfn)
     return log_file
 
 # ARW file : t0+25s <-> t0+65s
@@ -965,6 +988,9 @@ def proc_logfile( fish_00_avi_fnfull ):
         return
     if not os.path.exists(fish_00_avi_fnfull):
         return
+    if not serch_logfile(fish_00_avi_fnfull)=='':
+        return
+
     fish_dir =  serch_fish_dir( fish_00_avi_fnfull )
     split_log_file(fish_dir+'/log.txt')
 
@@ -1026,6 +1052,12 @@ if __name__ == 'xx__main__':
 # 日付指定   
 if __name__ == "__main__":
     #logger.info('Test Run start.')
+
+    #fn='J:/MT/20200920/20200920_182425_127_00.avi'
+    fn='J:/MT/20200921/20200921_185059_391_00.avi'
+    print('serchlog['+serch_logfile(fn)+']')
+    proc_logfile(fn)
+    #remake_00avi(fn,True, True)
 
     fn = './20190120_043836_156_00t.txt'
     train_max_position(fn)
